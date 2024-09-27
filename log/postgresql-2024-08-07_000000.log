@@ -1,0 +1,99 @@
+2024-08-07 03:06:17.351 CDT [8740] LOG:  checkpoint starting: time
+2024-08-07 03:06:20.477 CDT [8740] LOG:  checkpoint complete: wrote 31 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.099 s, sync=0.018 s, total=3.126 s; sync files=30, longest=0.002 s, average=0.001 s; distance=312 kB, estimate=312 kB; lsn=0/24246E0, redo lsn=0/24246A8
+2024-08-07 07:40:33.887 CDT [7832] ERROR:  column "updateat" does not exist at character 50
+2024-08-07 07:40:33.887 CDT [7832] HINT:  Perhaps you meant to reference the column "e.updatedat".
+2024-08-07 07:40:33.887 CDT [7832] STATEMENT:  select * from dbo.employeeinformation e order by updateat desc
+2024-08-07 07:41:17.637 CDT [8740] LOG:  checkpoint starting: time
+2024-08-07 07:41:18.047 CDT [8740] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.402 s, sync=0.003 s, total=0.410 s; sync files=4, longest=0.002 s, average=0.001 s; distance=1 kB, estimate=281 kB; lsn=0/2424C10, redo lsn=0/2424BD8
+2024-08-07 07:45:55.978 CDT [16020] ERROR:  unexpected end of function definition at end of input at character 2203
+2024-08-07 07:45:55.978 CDT [16020] STATEMENT:  -- DROP PROCEDURE dbo.merge_employeeinformation();
+	
+	CREATE OR REPLACE PROCEDURE dbo.merge_employeeinformation()
+	 LANGUAGE plpgsql
+	AS $procedure$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	Ex:
+	call dbo.merge_employeeinformation(False)
+	
+	*/
+	
+	
+	
+	
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		-- if we have the employeeIdNumber in the table, and any value is different
+		when matched 
+			and (s.schedulegroup is distinct from t.schedulegroup 
+				or s.firstname is distinct from t.firstname 
+				or s.lastname is distinct from t.lastname
+				or s.classshift is distinct from t.classshift 
+				or s.department is distinct from t.department 
+				or s.location is distinct from t.location)
+	
+			then update set 
+				firstname = s.firstname, 
+				lastname = s.lastname, 
+				classshift = s.classshift, 
+				department = s.department, 
+				location = s.location, 
+				schedulegroup = s.schedulegroup,
+				terminated = False
+		
+		-- insert values if we do not have them at all in the table
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False);
+		
+		
+		truncate table live.employeeinformation;
+	
+		insert into dbo.employeeinformation_log (insertedat)
+		values (now())
+		
+	end
+	$procedure$
+	
+2024-08-07 07:46:17.047 CDT [8740] LOG:  checkpoint starting: time
+2024-08-07 07:46:19.582 CDT [8740] LOG:  checkpoint complete: wrote 26 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.517 s, sync=0.013 s, total=2.536 s; sync files=23, longest=0.002 s, average=0.001 s; distance=119 kB, estimate=265 kB; lsn=0/2442C00, redo lsn=0/2442BC8
+2024-08-07 07:47:10.906 CDT [20796] ERROR:  permission denied for table employeeinformation_log
+2024-08-07 07:47:10.906 CDT [20796] CONTEXT:  SQL statement "insert into dbo.employeeinformation_log (insertedat)
+		values (now())"
+	PL/pgSQL function dbo.merge_employeeinformation() line 64 at SQL statement
+2024-08-07 07:47:10.906 CDT [20796] STATEMENT:  call dbo.merge_employeeinformation()
+2024-08-07 07:47:51.973 CDT [3248] ERROR:  permission denied for table employeeinformation_log
+2024-08-07 07:47:51.973 CDT [3248] CONTEXT:  SQL statement "insert into dbo.employeeinformation_log (insertedat)
+		values (now())"
+	PL/pgSQL function dbo.merge_employeeinformation() line 64 at SQL statement
+2024-08-07 07:47:51.973 CDT [3248] STATEMENT:  call dbo.merge_employeeinformation()
+2024-08-07 07:51:17.583 CDT [8740] LOG:  checkpoint starting: time
+2024-08-07 07:51:21.126 CDT [8740] LOG:  checkpoint complete: wrote 36 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.520 s, sync=0.017 s, total=3.544 s; sync files=41, longest=0.002 s, average=0.001 s; distance=667 kB, estimate=667 kB; lsn=0/24E9B98, redo lsn=0/24E9B60
+2024-08-07 13:11:17.205 CDT [8740] LOG:  checkpoint starting: time
+2024-08-07 13:11:21.343 CDT [8740] LOG:  checkpoint complete: wrote 42 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.125 s, sync=0.008 s, total=4.138 s; sync files=14, longest=0.001 s, average=0.001 s; distance=128 kB, estimate=613 kB; lsn=0/2509BF8, redo lsn=0/2509BC0
+2024-08-07 13:16:17.344 CDT [8740] LOG:  checkpoint starting: time
+2024-08-07 13:16:17.856 CDT [8740] LOG:  checkpoint complete: wrote 5 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.505 s, sync=0.002 s, total=0.512 s; sync files=1, longest=0.002 s, average=0.002 s; distance=18 kB, estimate=554 kB; lsn=0/250E6E8, redo lsn=0/250E6B0

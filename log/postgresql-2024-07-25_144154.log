@@ -1,0 +1,172 @@
+2024-07-25 14:41:54.929 CDT [45104] LOG:  database system was shut down at 2024-07-25 14:41:45 CDT
+2024-07-25 14:46:54.927 CDT [38268] LOG:  checkpoint starting: time
+2024-07-25 14:47:00.551 CDT [38268] LOG:  checkpoint complete: wrote 58 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.601 s, sync=0.016 s, total=5.625 s; sync files=30, longest=0.002 s, average=0.001 s; distance=264 kB, estimate=264 kB; lsn=0/15AECE0, redo lsn=0/15AECA8
+2024-07-25 15:21:54.564 CDT [38268] LOG:  checkpoint starting: time
+2024-07-25 15:21:54.977 CDT [38268] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.403 s, sync=0.003 s, total=0.413 s; sync files=2, longest=0.002 s, average=0.002 s; distance=22 kB, estimate=240 kB; lsn=0/15B4750, redo lsn=0/15B4718
+2024-07-25 15:36:54.989 CDT [38268] LOG:  checkpoint starting: time
+2024-07-25 15:36:55.402 CDT [38268] LOG:  checkpoint complete: wrote 5 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.403 s, sync=0.004 s, total=0.414 s; sync files=5, longest=0.002 s, average=0.001 s; distance=1 kB, estimate=216 kB; lsn=0/15B4F00, redo lsn=0/15B4EC8
+2024-07-25 15:41:54.404 CDT [38268] LOG:  checkpoint starting: time
+2024-07-25 15:41:57.446 CDT [38268] LOG:  checkpoint complete: wrote 31 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.021 s, sync=0.015 s, total=3.042 s; sync files=24, longest=0.002 s, average=0.001 s; distance=100 kB, estimate=205 kB; lsn=0/15CE130, redo lsn=0/15CE0F8
+2024-07-25 15:48:50.807 CDT [23032] ERROR:  type "datetime" does not exist at character 60
+2024-07-25 15:48:50.807 CDT [23032] STATEMENT:  alter table dbo.EmployeeInformation 
+	add column UpdatedAt datetime
+2024-07-25 15:51:52.063 CDT [23032] ERROR:  syntax error at or near "alter" at character 236
+2024-07-25 15:51:52.063 CDT [23032] STATEMENT:  create table dbo.EmployeeInformation (id int generated always as identity, EmployeeIdNumber Int, FirstName varchar(100), LastName varchar(100), ClassShift int, Department varchar(100), location varchar(5), ScheduleGroup varchar(100))
+	alter table dbo.EmployeeInformation 
+	add column InsertedAt timestamp
+2024-07-25 15:51:54.450 CDT [38268] LOG:  checkpoint starting: time
+2024-07-25 15:51:57.389 CDT [38268] LOG:  checkpoint complete: wrote 30 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.922 s, sync=0.011 s, total=2.940 s; sync files=18, longest=0.002 s, average=0.001 s; distance=99 kB, estimate=194 kB; lsn=0/15EA6E8, redo lsn=0/15E7038
+2024-07-25 15:52:59.639 CDT [23032] ERROR:  trigger "update_modified_time" for relation "employeeinformation" already exists
+2024-07-25 15:52:59.639 CDT [23032] STATEMENT:  CREATE TRIGGER update_modified_time BEFORE UPDATE ON dbo.EmployeeInformation FOR EACH ROW EXECUTE PROCEDURE update_modified_column()
+2024-07-25 15:56:16.091 CDT [38220] ERROR:  syntax error at or near "CREATE" at character 44
+2024-07-25 15:56:16.091 CDT [38220] STATEMENT:  drop function public.update_modified_time
+	CREATE OR REPLACE FUNCTION public.updateInsertedAtTimestamp()
+	 RETURNS trigger
+	 LANGUAGE plpgsql
+	AS $function$
+	BEGIN
+	NEW.InsertedAt = now();
+	RETURN NEW;
+	END;
+	$function$
+	
+2024-07-25 15:56:21.166 CDT [38220] ERROR:  could not find a function named "public.update_modified_time"
+2024-07-25 15:56:21.166 CDT [38220] STATEMENT:  drop function public.update_modified_time
+2024-07-25 15:56:36.809 CDT [38220] ERROR:  could not find a function named "public.update_modified_time"
+2024-07-25 15:56:36.809 CDT [38220] STATEMENT:  drop function public.update_modified_time
+2024-07-25 15:56:41.557 CDT [38220] ERROR:  could not find a function named "update_modified_time"
+2024-07-25 15:56:41.557 CDT [38220] STATEMENT:  drop function update_modified_time
+2024-07-25 15:56:54.390 CDT [38268] LOG:  checkpoint starting: time
+2024-07-25 15:56:56.220 CDT [38268] LOG:  checkpoint complete: wrote 19 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.813 s, sync=0.010 s, total=1.831 s; sync files=17, longest=0.002 s, average=0.001 s; distance=65 kB, estimate=181 kB; lsn=0/15F7680, redo lsn=0/15F7648
+2024-07-25 15:57:06.865 CDT [38220] ERROR:  function update_modified_time() does not exist
+2024-07-25 15:57:06.865 CDT [38220] STATEMENT:  drop function update_modified_time()
+2024-07-25 15:57:11.897 CDT [38220] ERROR:  function public.update_modified_time() does not exist
+2024-07-25 15:57:11.897 CDT [38220] STATEMENT:  drop function public.update_modified_time()
+2024-07-25 15:57:29.750 CDT [38220] ERROR:  syntax error at or near "DROP" at character 46
+2024-07-25 15:57:29.750 CDT [38220] STATEMENT:  drop function public.update_modified_time()
+	DROP FUNCTION public.update_modified_column()
+2024-07-25 15:57:33.794 CDT [38220] ERROR:  cannot drop function update_modified_column() because other objects depend on it
+2024-07-25 15:57:33.794 CDT [38220] DETAIL:  trigger update_modified_time on table dbo.employeeinformation depends on function update_modified_column()
+2024-07-25 15:57:33.794 CDT [38220] HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2024-07-25 15:57:33.794 CDT [38220] STATEMENT:  DROP FUNCTION public.update_modified_column()
+2024-07-25 16:01:54.221 CDT [38268] LOG:  checkpoint starting: time
+2024-07-25 16:01:56.250 CDT [38268] LOG:  checkpoint complete: wrote 21 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.014 s, sync=0.009 s, total=2.030 s; sync files=15, longest=0.002 s, average=0.001 s; distance=90 kB, estimate=172 kB; lsn=0/160E1B8, redo lsn=0/160E180
+2024-07-25 16:06:54.250 CDT [38268] LOG:  checkpoint starting: time
+2024-07-25 16:06:55.571 CDT [38268] LOG:  checkpoint complete: wrote 14 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.308 s, sync=0.007 s, total=1.322 s; sync files=11, longest=0.002 s, average=0.001 s; distance=54 kB, estimate=160 kB; lsn=0/161BA38, redo lsn=0/161BA00
+2024-07-25 16:19:51.008 CDT [38220] ERROR:  syntax error at or near "select" at character 40
+2024-07-25 16:19:51.008 CDT [38220] STATEMENT:  select * from dbo.EmployeeInformation
+	select * from live.employeeinformatio
+2024-07-25 16:19:57.258 CDT [38220] ERROR:  syntax error at or near "select" at character 40
+2024-07-25 16:19:57.258 CDT [38220] STATEMENT:  select * from dbo.EmployeeInformation
+	select * from live.EmployeeInformation
+2024-07-25 16:21:54.576 CDT [38268] LOG:  checkpoint starting: time
+2024-07-25 16:21:56.504 CDT [38268] LOG:  checkpoint complete: wrote 20 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.912 s, sync=0.009 s, total=1.928 s; sync files=16, longest=0.001 s, average=0.001 s; distance=92 kB, estimate=153 kB; lsn=0/1632E28, redo lsn=0/1632DF0
+2024-07-25 16:27:42.305 CDT [7968] FATAL:  password authentication failed for user "username"
+2024-07-25 16:27:42.305 CDT [7968] DETAIL:  Role "username" does not exist.
+	Connection matched file "C:/Program Files/PostgreSQL/16/data/pg_hba.conf" line 117: "host    all             all             ::1/128                 scram-sha-256"
+2024-07-25 16:31:54.512 CDT [38268] LOG:  checkpoint starting: time
+2024-07-25 16:31:54.927 CDT [38268] LOG:  checkpoint complete: wrote 5 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.405 s, sync=0.005 s, total=0.416 s; sync files=5, longest=0.002 s, average=0.001 s; distance=3 kB, estimate=138 kB; lsn=0/1633C80, redo lsn=0/1633C48
+2024-07-25 16:35:32.160 CDT [31572] FATAL:  database "mydatabase" does not exist
+2024-07-25 16:35:53.411 CDT [44752] ERROR:  permission denied for schema public at character 15
+2024-07-25 16:35:53.411 CDT [44752] STATEMENT:  
+	CREATE TABLE "live.EmployeeInformation" (
+		index BIGINT, 
+		"<NUMBER>" BIGINT, 
+		"<FIRSTNAME>" TEXT, 
+		"<LASTNAME>" TEXT, 
+		"<CLASS>" FLOAT(53), 
+		"<DEPARTMENT>" TEXT, 
+		"<LOCATION>" TEXT, 
+		"<SCHEDULEGROUP>" TEXT
+	)
+	
+	
+2024-07-25 16:36:08.700 CDT [44752] ERROR:  permission denied for schema live at character 15
+2024-07-25 16:36:08.700 CDT [44752] STATEMENT:  
+	CREATE TABLE live."EmployeeInformation" (
+		index BIGINT, 
+		"<NUMBER>" BIGINT, 
+		"<FIRSTNAME>" TEXT, 
+		"<LASTNAME>" TEXT, 
+		"<CLASS>" FLOAT(53), 
+		"<DEPARTMENT>" TEXT, 
+		"<LOCATION>" TEXT, 
+		"<SCHEDULEGROUP>" TEXT
+	)
+	
+	
+2024-07-25 16:36:52.729 CDT [44752] ERROR:  permission denied for schema live at character 15
+2024-07-25 16:36:52.729 CDT [44752] STATEMENT:  
+	CREATE TABLE live."EmployeeInformation" (
+		index BIGINT, 
+		"<NUMBER>" BIGINT, 
+		"<FIRSTNAME>" TEXT, 
+		"<LASTNAME>" TEXT, 
+		"<CLASS>" FLOAT(53), 
+		"<DEPARTMENT>" TEXT, 
+		"<LOCATION>" TEXT, 
+		"<SCHEDULEGROUP>" TEXT
+	)
+	
+	
+2024-07-25 16:38:54.951 CDT [38220] ERROR:  syntax error at or near "grant" at character 46
+2024-07-25 16:38:54.951 CDT [38220] STATEMENT:  CREATE USER python WITH PASSWORD 'deezNuts'
+	grant all privileges on database postgres to python
+	
+2024-07-25 16:39:04.082 CDT [44752] ERROR:  permission denied for schema live at character 15
+2024-07-25 16:39:04.082 CDT [44752] STATEMENT:  
+	CREATE TABLE live."EmployeeInformation" (
+		index BIGINT, 
+		"<NUMBER>" BIGINT, 
+		"<FIRSTNAME>" TEXT, 
+		"<LASTNAME>" TEXT, 
+		"<CLASS>" FLOAT(53), 
+		"<DEPARTMENT>" TEXT, 
+		"<LOCATION>" TEXT, 
+		"<SCHEDULEGROUP>" TEXT
+	)
+	
+	
+2024-07-25 16:39:33.869 CDT [44752] ERROR:  permission denied for schema live at character 15
+2024-07-25 16:39:33.869 CDT [44752] STATEMENT:  
+	CREATE TABLE live."EmployeeInformation" (
+		index BIGINT, 
+		"<NUMBER>" BIGINT, 
+		"<FIRSTNAME>" TEXT, 
+		"<LASTNAME>" TEXT, 
+		"<CLASS>" FLOAT(53), 
+		"<DEPARTMENT>" TEXT, 
+		"<LOCATION>" TEXT, 
+		"<SCHEDULEGROUP>" TEXT
+	)
+	
+	
+2024-07-25 16:40:52.314 CDT [44752] ERROR:  permission denied for schema live at character 15
+2024-07-25 16:40:52.314 CDT [44752] STATEMENT:  
+	CREATE TABLE live."EmployeeInformation" (
+		index BIGINT, 
+		"<NUMBER>" BIGINT, 
+		"<FIRSTNAME>" TEXT, 
+		"<LASTNAME>" TEXT, 
+		"<CLASS>" FLOAT(53), 
+		"<DEPARTMENT>" TEXT, 
+		"<LOCATION>" TEXT, 
+		"<SCHEDULEGROUP>" TEXT
+	)
+	
+	
+2024-07-25 16:41:00.692 CDT [44752] ERROR:  permission denied for schema live at character 15
+2024-07-25 16:41:00.692 CDT [44752] STATEMENT:  
+	CREATE TABLE live."EmployeeInformation" (
+		"<NUMBER>" BIGINT, 
+		"<FIRSTNAME>" TEXT, 
+		"<LASTNAME>" TEXT, 
+		"<CLASS>" FLOAT(53), 
+		"<DEPARTMENT>" TEXT, 
+		"<LOCATION>" TEXT, 
+		"<SCHEDULEGROUP>" TEXT
+	)
+	
+	
+2024-07-25 16:41:54.931 CDT [38268] LOG:  checkpoint starting: time
+2024-07-25 16:41:55.745 CDT [38268] LOG:  checkpoint complete: wrote 9 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.803 s, sync=0.006 s, total=0.814 s; sync files=7, longest=0.002 s, average=0.001 s; distance=3 kB, estimate=125 kB; lsn=0/1634970, redo lsn=0/1634938

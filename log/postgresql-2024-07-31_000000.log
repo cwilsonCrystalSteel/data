@@ -1,0 +1,73 @@
+2024-07-31 10:02:09.199 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:02:09.199 CDT [21540] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 10:04:37.958 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:05:38.058 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:06:25.705 CDT [21512] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 10:09:38.358 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:10:38.457 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:10:58.829 CDT [4708] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 10:10:58.830 CDT [14280] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 10:17:38.147 CDT [18468] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 10:18:38.666 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:19:38.765 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:21:35.731 CDT [19700] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 10:22:38.867 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:24:38.867 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:26:26.282 CDT [11904] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 10:27:29.462 CDT [22764] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 10:28:39.268 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:31:39.470 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:32:39.570 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:33:20.478 CDT [8456] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 10:33:37.815 CDT [22060] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 10:35:39.870 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:37:39.599 CDT [4284] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 10:41:40.170 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:42:40.270 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:44:40.270 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:44:43.537 CDT [19792] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 10:46:40.470 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:47:18.501 CDT [8084] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 10:47:19.689 CDT [14100] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 10:48:40.570 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:49:40.670 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:51:40.870 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:52:40.970 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:53:41.070 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:56:41.171 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:57:39.558 CDT [21212] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 10:58:41.372 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 10:59:30.031 CDT [16704] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 11:00:41.250 CDT [21976] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 11:01:22.813 CDT [7184] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 11:03:15.625 CDT [17620] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 11:05:41.672 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 11:06:31.563 CDT [23344] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 11:07:41.773 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 11:09:41.872 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 11:10:49.247 CDT [23164] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 11:10:49.248 CDT [20244] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 11:11:14.207 CDT [20872] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 11:11:26.060 CDT [16768] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 11:11:31.996 CDT [1756] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 11:13:41.874 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 11:14:41.974 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 11:15:18.812 CDT [20104] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 11:15:18.829 CDT [21056] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 11:15:28.328 CDT [19184] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 11:18:42.274 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 11:19:42.275 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 11:20:42.275 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 11:21:42.277 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 11:24:38.139 CDT [22944] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 11:31:42.578 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 11:34:30.696 CDT [20448] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 11:36:41.317 CDT [13268] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 11:38:42.678 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 11:42:42.979 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 11:43:43.078 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 11:44:42.264 CDT [22148] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 11:45:34.508 CDT [13856] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 11:47:02.791 CDT [22564] WARNING:  autovacuum worker started without a worker entry
+2024-07-31 11:48:43.478 CDT [9984] WARNING:  autovacuum worker took too long to start; canceled
+2024-07-31 11:48:52.041 CDT [23372] WARNING:  autovacuum worker started without a worker entry

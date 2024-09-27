@@ -1,0 +1,2 @@
+2024-08-05 03:06:16.397 CDT [8740] LOG:  checkpoint starting: time
+2024-08-05 03:06:19.310 CDT [8740] LOG:  checkpoint complete: wrote 28 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.895 s, sync=0.012 s, total=2.914 s; sync files=26, longest=0.002 s, average=0.001 s; distance=296 kB, estimate=305 kB; lsn=0/238DC40, redo lsn=0/238DC08

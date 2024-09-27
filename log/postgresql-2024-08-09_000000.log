@@ -1,0 +1,11 @@
+2024-08-09 03:01:19.067 CDT [8740] LOG:  checkpoint starting: time
+2024-08-09 03:01:23.417 CDT [8740] LOG:  checkpoint complete: wrote 44 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.328 s, sync=0.016 s, total=4.351 s; sync files=39, longest=0.002 s, average=0.001 s; distance=361 kB, estimate=736 kB; lsn=0/2A50590, redo lsn=0/2A50558
+2024-08-09 15:31:19.582 CDT [8740] LOG:  checkpoint starting: time
+2024-08-09 15:31:26.462 CDT [8740] LOG:  checkpoint complete: wrote 69 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=6.845 s, sync=0.023 s, total=6.880 s; sync files=69, longest=0.002 s, average=0.001 s; distance=852 kB, estimate=852 kB; lsn=0/2B25968, redo lsn=0/2B258F8
+2024-08-09 15:36:19.463 CDT [8740] LOG:  checkpoint starting: time
+2024-08-09 15:36:24.118 CDT [8740] LOG:  checkpoint complete: wrote 47 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.624 s, sync=0.022 s, total=4.656 s; sync files=45, longest=0.002 s, average=0.001 s; distance=401 kB, estimate=807 kB; lsn=0/2B8A0C0, redo lsn=0/2B8A088
+2024-08-09 15:41:19.120 CDT [8740] LOG:  checkpoint starting: time
+2024-08-09 15:41:19.932 CDT [8740] LOG:  checkpoint complete: wrote 8 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.805 s, sync=0.002 s, total=0.812 s; sync files=2, longest=0.001 s, average=0.001 s; distance=18 kB, estimate=728 kB; lsn=0/2B8EB48, redo lsn=0/2B8EB10
+2024-08-09 15:51:08.573 CDT [36140] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2024-08-09 15:51:08.574 CDT [36140] LOG:  unexpected EOF on client connection with an open transaction

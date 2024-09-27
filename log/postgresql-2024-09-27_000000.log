@@ -1,0 +1,18 @@
+2024-09-27 08:29:01.363 CDT [9428] LOG:  checkpoint starting: time
+2024-09-27 08:29:04.358 CDT [9428] LOG:  checkpoint complete: wrote 30 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.939 s, sync=0.044 s, total=2.996 s; sync files=32, longest=0.003 s, average=0.002 s; distance=234 kB, estimate=234 kB; lsn=0/E5E65B0, redo lsn=0/E5E6578
+2024-09-27 09:49:01.365 CDT [9428] LOG:  checkpoint starting: time
+2024-09-27 09:49:07.115 CDT [9428] LOG:  checkpoint complete: wrote 57 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.649 s, sync=0.083 s, total=5.750 s; sync files=70, longest=0.003 s, average=0.002 s; distance=546 kB, estimate=546 kB; lsn=0/E66F058, redo lsn=0/E66F020
+2024-09-27 09:49:07.606 CDT [37036] ERROR:  syntax error at or near "and" at character 93
+2024-09-27 09:49:07.606 CDT [37036] STATEMENT:  select * from dbo.clocktimes where insertedat = (select max(insertedat) from dbo.clocktimes and remediationtype <> 10)
+2024-09-27 09:54:01.117 CDT [9428] LOG:  checkpoint starting: time
+2024-09-27 09:54:04.088 CDT [9428] LOG:  checkpoint complete: wrote 30 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.922 s, sync=0.030 s, total=2.972 s; sync files=27, longest=0.004 s, average=0.002 s; distance=241 kB, estimate=516 kB; lsn=0/E6AB658, redo lsn=0/E6AB620
+2024-09-27 09:55:35.615 CDT [37036] ERROR:  syntax error at or near "pg_proc" at character 1
+2024-09-27 09:55:35.615 CDT [37036] STATEMENT:  pg_proc
+2024-09-27 09:55:39.462 CDT [37036] ERROR:  unrecognized configuration parameter "pg_proc"
+2024-09-27 09:55:39.462 CDT [37036] STATEMENT:  show pg_proc
+2024-09-27 09:56:58.143 CDT [37036] ERROR:  could not stat file "pg_tblspc/4063": No such file or directory
+2024-09-27 09:56:58.143 CDT [37036] STATEMENT:  select pg_tablespace_location(oid), * from pg_proc where proname like '%merge%'
+2024-09-27 09:59:01.089 CDT [9428] LOG:  checkpoint starting: time
+2024-09-27 09:59:02.117 CDT [9428] LOG:  checkpoint complete: wrote 10 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.005 s, sync=0.005 s, total=1.028 s; sync files=2, longest=0.003 s, average=0.003 s; distance=2 kB, estimate=464 kB; lsn=0/E6AC0E0, redo lsn=0/E6AC0A8
+2024-09-27 10:04:01.118 CDT [9428] LOG:  checkpoint starting: time
+2024-09-27 10:04:02.571 CDT [9428] LOG:  checkpoint complete: wrote 15 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.409 s, sync=0.029 s, total=1.453 s; sync files=25, longest=0.004 s, average=0.002 s; distance=141 kB, estimate=432 kB; lsn=0/E6CF630, redo lsn=0/E6CF5F8

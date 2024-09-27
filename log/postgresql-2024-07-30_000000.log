@@ -1,0 +1,2744 @@
+2024-07-30 07:43:56.858 CDT [19504] ERROR:  permission denied for schema public at character 15
+2024-07-30 07:43:56.858 CDT [19504] STATEMENT:  
+	CREATE TABLE "EmployeeInformation" (
+		"<NUMBER>" BIGINT, 
+		"<FIRSTNAME>" TEXT, 
+		"<LASTNAME>" TEXT, 
+		"<CLASS>" FLOAT(53), 
+		"<DEPARTMENT>" TEXT, 
+		"<LOCATION>" TEXT, 
+		"<SCHEDULEGROUP>" TEXT
+	)
+	
+	
+2024-07-30 07:45:05.232 CDT [19504] ERROR:  permission denied for schema public at character 15
+2024-07-30 07:45:05.232 CDT [19504] STATEMENT:  
+	CREATE TABLE "EmployeeInformation" (
+		"<NUMBER>" BIGINT, 
+		"<FIRSTNAME>" TEXT, 
+		"<LASTNAME>" TEXT, 
+		"<CLASS>" FLOAT(53), 
+		"<DEPARTMENT>" TEXT, 
+		"<LOCATION>" TEXT, 
+		"<SCHEDULEGROUP>" TEXT
+	)
+	
+	
+2024-07-30 07:45:36.727 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 07:45:37.045 CDT [9200] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.303 s, sync=0.004 s, total=0.319 s; sync files=4, longest=0.002 s, average=0.001 s; distance=1 kB, estimate=1 kB; lsn=0/1635038, redo lsn=0/1635000
+2024-07-30 07:47:29.106 CDT [7116] ERROR:  column "python" does not exist at character 68
+2024-07-30 07:47:29.106 CDT [7116] STATEMENT:  select * from information_schema.role_table_grants where grantee = "python"
+2024-07-30 07:50:10.897 CDT [7116] ERROR:  syntax error at or near "pg_namespace" at character 99
+2024-07-30 07:50:10.897 CDT [7116] STATEMENT:  select r.username as grantor, e.username as grantee, nspname, privilege_type, is_grantable 
+	form pg_namespace 
+	join lateral (select * from aclexplode(nspacl) as x) a on true 
+	join pg_user e on a.grantee = e.usesysid
+	join pg_user r on a.grantor = r.usesysid
+2024-07-30 07:50:26.451 CDT [7116] ERROR:  column r.username does not exist at character 8
+2024-07-30 07:50:26.451 CDT [7116] HINT:  Perhaps you meant to reference the column "r.usename".
+2024-07-30 07:50:26.451 CDT [7116] STATEMENT:  select r.username as grantor, e.username as grantee, nspname, privilege_type, is_grantable 
+	from pg_namespace 
+	join lateral (select * from aclexplode(nspacl) as x) a on true 
+	join pg_user e on a.grantee = e.usesysid
+	join pg_user r on a.grantor = r.usesysid --where e.u
+2024-07-30 07:51:58.589 CDT [7116] ERROR:  syntax error at or near "grant" at character 37
+2024-07-30 07:51:58.589 CDT [7116] STATEMENT:  grant all on schema live to python
+	grant all priveleges on database 'postgres' to python
+2024-07-30 07:52:08.055 CDT [7116] ERROR:  syntax error at or near "priveleges" at character 11
+2024-07-30 07:52:08.055 CDT [7116] STATEMENT:  grant all priveleges on database 'postgres' to python
+2024-07-30 07:52:16.231 CDT [7116] ERROR:  syntax error at or near "'postgres'" at character 34
+2024-07-30 07:52:16.231 CDT [7116] STATEMENT:  grant all privileges on database 'postgres' to python
+2024-07-30 07:52:51.384 CDT [19504] ERROR:  permission denied for schema public at character 15
+2024-07-30 07:52:51.384 CDT [19504] STATEMENT:  
+	CREATE TABLE "EmployeeInformation" (
+		"<NUMBER>" BIGINT, 
+		"<FIRSTNAME>" TEXT, 
+		"<LASTNAME>" TEXT, 
+		"<CLASS>" FLOAT(53), 
+		"<DEPARTMENT>" TEXT, 
+		"<LOCATION>" TEXT, 
+		"<SCHEDULEGROUP>" TEXT
+	)
+	
+	
+2024-07-30 07:53:25.380 CDT [19504] ERROR:  permission denied for schema public at character 15
+2024-07-30 07:53:25.380 CDT [19504] STATEMENT:  
+	CREATE TABLE test (
+		"<NUMBER>" BIGINT, 
+		"<FIRSTNAME>" TEXT, 
+		"<LASTNAME>" TEXT, 
+		"<CLASS>" FLOAT(53), 
+		"<DEPARTMENT>" TEXT, 
+		"<LOCATION>" TEXT, 
+		"<SCHEDULEGROUP>" TEXT
+	)
+	
+	
+2024-07-30 07:54:34.374 CDT [7116] ERROR:  syntax error at or near "select" at character 44
+2024-07-30 07:54:34.374 CDT [7116] STATEMENT:  select * from live.employeeinformation e 
+	select * from live."EmployeeInformation" ei 
+2024-07-30 07:55:36.045 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 07:55:44.213 CDT [9200] LOG:  checkpoint complete: wrote 82 buffers (0.5%); 0 WAL file(s) added, 0 removed, 0 recycled; write=8.142 s, sync=0.019 s, total=8.168 s; sync files=42, longest=0.002 s, average=0.001 s; distance=679 kB, estimate=679 kB; lsn=0/16DEF58, redo lsn=0/16DEF20
+2024-07-30 07:56:42.069 CDT [7116] ERROR:  syntax error at or near "drop" at character 42
+2024-07-30 07:56:42.069 CDT [7116] STATEMENT:  
+	drop table live.employeeinformation
+	
+	drop table live."EmployeeInformation" 
+2024-07-30 07:57:13.444 CDT [7116] ERROR:  relation "live.EmployeeInformation" does not exist at character 15
+2024-07-30 07:57:13.444 CDT [7116] STATEMENT:  select * from live."EmployeeInformation" ei
+2024-07-30 08:00:36.214 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 08:00:42.161 CDT [9200] LOG:  checkpoint complete: wrote 60 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.927 s, sync=0.014 s, total=5.947 s; sync files=33, longest=0.002 s, average=0.001 s; distance=331 kB, estimate=644 kB; lsn=0/1731E50, redo lsn=0/1731E18
+2024-07-30 08:05:36.161 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 08:05:36.270 CDT [9200] LOG:  checkpoint complete: wrote 1 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.002 s, total=0.109 s; sync files=1, longest=0.002 s, average=0.002 s; distance=7 kB, estimate=581 kB; lsn=0/1733BC0, redo lsn=0/1733B88
+2024-07-30 08:10:36.270 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 08:10:39.304 CDT [9200] LOG:  checkpoint complete: wrote 31 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.018 s, sync=0.011 s, total=3.035 s; sync files=23, longest=0.002 s, average=0.001 s; distance=140 kB, estimate=537 kB; lsn=0/1756C08, redo lsn=0/1756BD0
+2024-07-30 08:22:05.401 CDT [15264] ERROR:  syntax error at or near "alter" at character 11
+2024-07-30 08:22:05.401 CDT [15264] STATEMENT:  create or alter procedure dbo.merge_employeeinformation
+	@includes_terminated bit = 0
+	
+	as
+	
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	*/
+	
+	
+	
+	if @include_terminated = 0
+2024-07-30 08:22:11.839 CDT [15264] ERROR:  syntax error at or near "@" at character 60
+2024-07-30 08:22:11.839 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	@includes_terminated bit = 0
+	
+	as
+	
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	*/
+	
+	
+	
+	if @include_terminated = 0
+2024-07-30 08:23:19.542 CDT [15264] ERROR:  syntax error at or near "if" at character 622
+2024-07-30 08:23:19.542 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated bit = 0)
+	
+	as
+	
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	*/
+	
+	
+	
+	if include_terminated = 0
+2024-07-30 08:23:58.234 CDT [15264] ERROR:  syntax error at or near "if" at character 622
+2024-07-30 08:23:58.234 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated bit = 0)
+	
+	as
+	
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	*/
+	
+	
+	
+	if include_terminated = 0
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname
+				"<LASTNAME>" as lastname
+				"<CLASS>" as classshift
+				"<DEPARTMENT>" as department
+				"<LOCATION>" as location
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup)
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.locaiton, s.schedulegroup, 0)
+		
+		
+	end if
+	end
+	
+	
+	
+2024-07-30 08:24:10.669 CDT [15264] ERROR:  syntax error at or near "if" at character 622
+2024-07-30 08:24:10.669 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated bit = 0)
+	
+	as
+	
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	*/
+	
+	
+	
+	if include_terminated = 0
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname
+				"<LASTNAME>" as lastname
+				"<CLASS>" as classshift
+				"<DEPARTMENT>" as department
+				"<LOCATION>" as location
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup)
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.locaiton, s.schedulegroup, 0)
+		
+		
+	
+2024-07-30 08:24:28.774 CDT [15264] ERROR:  syntax error at or near "if" at character 622
+2024-07-30 08:24:28.774 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated bit = 0)
+	
+	as
+	
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	*/
+	
+	
+	
+	if include_terminated = 0
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname
+				"<LASTNAME>" as lastname
+				"<CLASS>" as classshift
+				"<DEPARTMENT>" as department
+				"<LOCATION>" as location
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup)
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.locaiton, s.schedulegroup, 0)
+		
+		
+	
+2024-07-30 08:26:01.885 CDT [15264] ERROR:  language "plpsql" does not exist
+2024-07-30 08:26:01.885 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated bit = 0)
+	language plpsql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	*/
+	
+	
+	
+	if include_terminated = 0
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname
+				"<LASTNAME>" as lastname
+				"<CLASS>" as classshift
+				"<DEPARTMENT>" as department
+				"<LOCATION>" as location
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup)
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.locaiton, s.schedulegroup, 0)
+		
+		
+	;end if;
+	end
+	$$
+	
+	
+	
+2024-07-30 08:26:10.702 CDT [15264] ERROR:  argument of DEFAULT must be type bit, not type integer at character 87
+2024-07-30 08:26:10.702 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated bit = 0)
+	language plpgsql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	*/
+	
+	
+	
+	if include_terminated = 0
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname
+				"<LASTNAME>" as lastname
+				"<CLASS>" as classshift
+				"<DEPARTMENT>" as department
+				"<LOCATION>" as location
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup)
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.locaiton, s.schedulegroup, 0)
+		
+		
+	;end if;
+	end
+	$$
+	
+	
+	
+2024-07-30 08:26:19.983 CDT [15264] ERROR:  argument of DEFAULT must be type bit, not type boolean at character 87
+2024-07-30 08:26:19.983 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated bit = False)
+	language plpgsql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	*/
+	
+	
+	
+	if include_terminated = 0
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname
+				"<LASTNAME>" as lastname
+				"<CLASS>" as classshift
+				"<DEPARTMENT>" as department
+				"<LOCATION>" as location
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup)
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.locaiton, s.schedulegroup, 0)
+		
+		
+	;end if;
+	end
+	$$
+	
+	
+	
+2024-07-30 08:26:48.194 CDT [15264] ERROR:  syntax error at or near ""<LASTNAME>"" at character 824
+2024-07-30 08:26:48.194 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated boolean = False)
+	language plpgsql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	*/
+	
+	
+	
+	if include_terminated = 0
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname
+				"<LASTNAME>" as lastname
+				"<CLASS>" as classshift
+				"<DEPARTMENT>" as department
+				"<LOCATION>" as location
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup)
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.locaiton, s.schedulegroup, 0)
+		
+		
+	;end if;
+	end
+	$$
+	
+	
+	
+2024-07-30 08:27:01.003 CDT [15264] ERROR:  syntax error at or near "from" at character 987
+2024-07-30 08:27:01.003 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated boolean = False)
+	language plpgsql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	*/
+	
+	
+	
+	if include_terminated = 0
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup,
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup)
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.locaiton, s.schedulegroup, 0)
+		
+		
+	;end if;
+	end
+	$$
+	
+	
+	
+2024-07-30 08:27:07.633 CDT [15264] ERROR:  syntax error at or near "when" at character 1283
+2024-07-30 08:27:07.633 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated boolean = False)
+	language plpgsql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	*/
+	
+	
+	
+	if include_terminated = 0
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup)
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.locaiton, s.schedulegroup, 0)
+		
+		
+	;end if;
+	end
+	$$
+	
+	
+	
+2024-07-30 08:29:09.512 CDT [15264] ERROR:  syntax error at or near "=" at character 1310
+2024-07-30 08:29:09.512 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated boolean = False)
+	language plpgsql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	*/
+	
+	
+	
+	if include_terminated = 0
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup) then
+			update set (t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.department, t.schedulegroup = s.schedulegroup)
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.locaiton, s.schedulegroup, 0)
+		
+		
+	;end if;
+	end
+	$$
+	
+	
+	
+2024-07-30 08:29:59.023 CDT [7116] ERROR:  column "include_terminated" does not exist at character 1
+2024-07-30 08:29:59.023 CDT [7116] QUERY:  include_terminated = 0
+2024-07-30 08:29:59.023 CDT [7116] CONTEXT:  PL/pgSQL function dbo.merge_employeeinformation(boolean) line 20 at IF
+2024-07-30 08:29:59.023 CDT [7116] STATEMENT:  call dbo.merge_employeeinformation(False)
+2024-07-30 08:30:06.221 CDT [7116] ERROR:  column "include_terminate" does not exist at character 36
+2024-07-30 08:30:06.221 CDT [7116] STATEMENT:  call dbo.merge_employeeinformation(include_terminate=False)
+2024-07-30 08:30:24.027 CDT [7116] ERROR:  column "include_terminate" does not exist at character 36
+2024-07-30 08:30:24.027 CDT [7116] STATEMENT:  call dbo.merge_employeeinformation(include_terminate=False)
+2024-07-30 08:30:36.323 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 08:30:37.641 CDT [9200] LOG:  checkpoint complete: wrote 14 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.307 s, sync=0.006 s, total=1.319 s; sync files=10, longest=0.002 s, average=0.001 s; distance=52 kB, estimate=488 kB; lsn=0/1763F18, redo lsn=0/1763EE0
+2024-07-30 08:31:45.097 CDT [15264] ERROR:  column "include_terminate" does not exist at character 36
+2024-07-30 08:31:45.097 CDT [15264] STATEMENT:  call dbo.merge_employeeinformation(include_terminate=False)
+2024-07-30 08:32:19.721 CDT [15264] ERROR:  syntax error at or near "include_terminated" at character 753
+2024-07-30 08:32:19.721 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated boolean = False)
+	language plpgsql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	Ex:
+	call dbo.merge_employeeinformation(include_terminate=False)
+	
+	*/
+	
+	select include_termianted
+	
+	
+	if include_terminated = False
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup) then
+			update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.department, t.schedulegroup = s.schedulegroup
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.locaiton, s.schedulegroup, 0)
+		
+		
+	;end if;
+	end
+	$$
+	
+	
+	
+2024-07-30 08:32:36.062 CDT [15264] ERROR:  column "include_terminate" does not exist at character 36
+2024-07-30 08:32:36.062 CDT [15264] STATEMENT:  call dbo.merge_employeeinformation(include_terminate=False)
+2024-07-30 08:32:44.482 CDT [15264] ERROR:  column "includes_terminated" does not exist at character 36
+2024-07-30 08:32:44.482 CDT [15264] STATEMENT:  call dbo.merge_employeeinformation(includes_terminated=False)
+2024-07-30 08:33:09.187 CDT [15264] ERROR:  column "includes_terminated" does not exist at character 36
+2024-07-30 08:33:09.187 CDT [15264] STATEMENT:  call dbo.merge_employeeinformation(includes_terminated=False)
+2024-07-30 08:33:33.259 CDT [15264] ERROR:  syntax error at or near "if" at character 786
+2024-07-30 08:33:33.259 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated boolean = False)
+	language plpgsql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	Ex:
+	call dbo.merge_employeeinformation(includes_terminated=False)
+	
+	*/
+	
+	declare includes_terminated boolean := includes_terminated;
+	
+	
+	if includes_terminated = False
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup) then
+			update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.department, t.schedulegroup = s.schedulegroup
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.locaiton, s.schedulegroup, 0)
+		
+		
+	;end if;
+	end
+	$$
+	
+	
+	
+2024-07-30 08:34:18.143 CDT [15264] ERROR:  column "includes_terminated" does not exist at character 36
+2024-07-30 08:34:18.143 CDT [15264] STATEMENT:  call dbo.merge_employeeinformation(includes_terminated=False)
+	
+2024-07-30 08:35:36.642 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 08:35:37.458 CDT [9200] LOG:  checkpoint complete: wrote 9 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.806 s, sync=0.006 s, total=0.817 s; sync files=8, longest=0.002 s, average=0.001 s; distance=53 kB, estimate=445 kB; lsn=0/1771360, redo lsn=0/1771328
+2024-07-30 08:37:02.740 CDT [15264] ERROR:  syntax error at or near "select" at character 717
+2024-07-30 08:37:02.740 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated boolean = False)
+	language sql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	Ex:
+	call dbo.merge_employeeinformation(includes_terminated=False)
+	
+	*/
+	
+	select includes_termianted;
+	
+	
+	if includes_terminated = False
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup) then
+			update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.department, t.schedulegroup = s.schedulegroup
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.locaiton, s.schedulegroup, 0)
+		
+		
+	;end if;
+	end
+	$$
+	
+	
+	
+2024-07-30 08:37:08.590 CDT [15264] ERROR:  syntax error at or near "if" at character 723
+2024-07-30 08:37:08.590 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated boolean = False)
+	language sql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	Ex:
+	call dbo.merge_employeeinformation(includes_terminated=False)
+	
+	*/
+	
+	
+	
+	
+	if includes_terminated = False
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup) then
+			update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.department, t.schedulegroup = s.schedulegroup
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.locaiton, s.schedulegroup, 0)
+		
+		
+	;end if;
+	end
+	$$
+	
+	
+	
+2024-07-30 08:37:49.729 CDT [15264] ERROR:  syntax error at or near "if" at character 725
+2024-07-30 08:37:49.729 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated boolean = False)
+	language sql
+	--as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	Ex:
+	call dbo.merge_employeeinformation(includes_terminated=False)
+	
+	*/
+	
+	
+	
+	
+	if includes_terminated = False
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup) then
+			update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.department, t.schedulegroup = s.schedulegroup
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.locaiton, s.schedulegroup, 0)
+		
+		
+	
+2024-07-30 08:38:00.697 CDT [15264] ERROR:  syntax error at or near "if" at character 730
+2024-07-30 08:38:00.697 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated boolean = False)
+	language sql
+	--as $$
+	as --begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	Ex:
+	call dbo.merge_employeeinformation(includes_terminated=False)
+	
+	*/
+	
+	
+	
+	
+	if includes_terminated = False
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup) then
+			update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.department, t.schedulegroup = s.schedulegroup
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.locaiton, s.schedulegroup, 0)
+		
+		
+	
+2024-07-30 08:38:45.650 CDT [15264] ERROR:  column "includes_terminated" does not exist at character 36
+2024-07-30 08:38:45.650 CDT [15264] STATEMENT:  call dbo.merge_employeeinformation(includes_terminated=False)
+2024-07-30 08:39:35.584 CDT [15264] ERROR:  column "includes_terminated" does not exist at character 36
+2024-07-30 08:39:35.584 CDT [15264] STATEMENT:  call dbo.merge_employeeinformation(includes_terminated=False)
+	
+2024-07-30 08:40:36.458 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 08:40:36.871 CDT [9200] LOG:  checkpoint complete: wrote 5 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.404 s, sync=0.004 s, total=0.414 s; sync files=5, longest=0.002 s, average=0.001 s; distance=33 kB, estimate=403 kB; lsn=0/1779B20, redo lsn=0/1779AE8
+2024-07-30 08:42:24.614 CDT [15264] ERROR:  column "includes_terminated" does not exist at character 36
+2024-07-30 08:42:24.614 CDT [15264] STATEMENT:  call dbo.merge_employeeinformation(includes_terminated=False)
+	
+2024-07-30 08:42:42.316 CDT [15264] ERROR:  column s.employeeidnumber does not exist at character 168
+2024-07-30 08:42:42.316 CDT [15264] QUERY:  INSERT INTO dbo.employeeinformation (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+	        SELECT 
+	            s.employeeidnumber,
+	            s.firstname,
+	            s.lastname,
+	            s.classshift,
+	            s.department,
+	            s.location,
+	            s.schedulegroup,
+	            0
+	        FROM live.employeeinformation s
+	        ON CONFLICT (employeeidnumber) DO NOTHING
+2024-07-30 08:42:42.316 CDT [15264] CONTEXT:  PL/pgSQL function dbo.merge_employeeinformation(boolean) line 82 at SQL statement
+2024-07-30 08:42:42.316 CDT [15264] STATEMENT:  call dbo.merge_employeeinformation(False)
+2024-07-30 08:44:47.919 CDT [15264] ERROR:  column "terminated" is of type bit but expression is of type integer at character 399
+2024-07-30 08:44:47.919 CDT [15264] HINT:  You will need to rewrite or cast the expression.
+2024-07-30 08:44:47.919 CDT [15264] QUERY:  INSERT INTO dbo.employeeinformation (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+	        SELECT 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup,
+	            0 as terminated
+	        FROM live.employeeinformation s
+	        ON CONFLICT (employeeidnumber) DO NOTHING
+2024-07-30 08:44:47.919 CDT [15264] CONTEXT:  PL/pgSQL function dbo.merge_employeeinformation(boolean) line 82 at SQL statement
+2024-07-30 08:44:47.919 CDT [15264] STATEMENT:  call dbo.merge_employeeinformation(False)
+2024-07-30 08:45:36.871 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 08:45:37.486 CDT [9200] LOG:  checkpoint complete: wrote 7 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.605 s, sync=0.006 s, total=0.616 s; sync files=7, longest=0.002 s, average=0.001 s; distance=28 kB, estimate=366 kB; lsn=0/1780CD0, redo lsn=0/1780C98
+2024-07-30 08:45:46.849 CDT [7116] ERROR:  column "terminated" cannot be cast automatically to type boolean
+2024-07-30 08:45:46.849 CDT [7116] HINT:  You might need to specify "USING terminated::boolean".
+2024-07-30 08:45:46.849 CDT [7116] STATEMENT:  alter table dbo.employeeinformation 
+	alter column terminated type boolean
+2024-07-30 08:45:52.953 CDT [7116] ERROR:  column "terminated" cannot be cast automatically to type boolean
+2024-07-30 08:45:52.953 CDT [7116] HINT:  You might need to specify "USING terminated::boolean".
+2024-07-30 08:45:52.953 CDT [7116] STATEMENT:  
+	alter table dbo.employeeinformation 
+	alter column terminated type boolean
+2024-07-30 08:46:49.978 CDT [15264] ERROR:  there is no unique or exclusion constraint matching the ON CONFLICT specification
+2024-07-30 08:46:49.978 CDT [15264] CONTEXT:  SQL statement "INSERT INTO dbo.employeeinformation (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+	        SELECT 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup,
+	            False as terminated
+	        FROM live.employeeinformation s
+	        ON CONFLICT (employeeidnumber) DO NOTHING"
+	PL/pgSQL function dbo.merge_employeeinformation(boolean) line 82 at SQL statement
+2024-07-30 08:46:49.978 CDT [15264] STATEMENT:  call dbo.merge_employeeinformation(False)
+2024-07-30 08:48:49.824 CDT [15264] ERROR:  value too long for type character varying(5)
+2024-07-30 08:48:49.824 CDT [15264] CONTEXT:  SQL statement "INSERT INTO dbo.employeeinformation (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+	        SELECT 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup,
+	            False as terminated
+	        FROM live.employeeinformation s
+	        ON CONFLICT (employeeidnumber) DO NOTHING"
+	PL/pgSQL function dbo.merge_employeeinformation(boolean) line 82 at SQL statement
+2024-07-30 08:48:49.824 CDT [15264] STATEMENT:  call dbo.merge_employeeinformation(False)
+2024-07-30 08:50:36.486 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 08:50:45.764 CDT [9200] LOG:  checkpoint complete: wrote 93 buffers (0.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=9.253 s, sync=0.020 s, total=9.278 s; sync files=53, longest=0.002 s, average=0.001 s; distance=680 kB, estimate=680 kB; lsn=0/182B070, redo lsn=0/182B038
+2024-07-30 08:54:06.118 CDT [15264] ERROR:  column "t" of relation "employeeinformation" does not exist at character 606
+2024-07-30 08:54:06.118 CDT [15264] STATEMENT:  merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup) then
+			update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.department, t.schedulegroup = s.schedulegroup
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.locaiton, s.schedulegroup, 0)
+		
+2024-07-30 08:54:33.657 CDT [15264] ERROR:  column s.locaiton does not exist at character 1004
+2024-07-30 08:54:33.657 CDT [15264] HINT:  Perhaps you meant to reference the column "s.location".
+2024-07-30 08:54:33.657 CDT [15264] STATEMENT:  merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		/*when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup) then
+			update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.department, t.schedulegroup = s.schedulegroup*/
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.locaiton, s.schedulegroup, 0)
+		
+2024-07-30 08:54:53.638 CDT [15264] ERROR:  column "terminated" is of type boolean but expression is of type integer at character 1036
+2024-07-30 08:54:53.638 CDT [15264] HINT:  You will need to rewrite or cast the expression.
+2024-07-30 08:54:53.638 CDT [15264] STATEMENT:  
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		/*when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup) then
+			update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.department, t.schedulegroup = s.schedulegroup*/
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, 0)
+2024-07-30 08:55:36.765 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 08:55:37.277 CDT [9200] LOG:  checkpoint complete: wrote 6 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.504 s, sync=0.004 s, total=0.513 s; sync files=5, longest=0.002 s, average=0.001 s; distance=17 kB, estimate=614 kB; lsn=0/182F760, redo lsn=0/182F728
+2024-07-30 09:01:23.930 CDT [15264] ERROR:  syntax error at or near "by" at character 806
+2024-07-30 09:01:23.930 CDT [15264] STATEMENT:  
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		/*when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup) then
+			update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.department, t.schedulegroup = s.schedulegroup*/
+		
+		when not matched by target then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)
+		
+2024-07-30 09:01:30.785 CDT [15264] ERROR:  column "employeeidnumber" is of type integer but expression is of type text at character 956
+2024-07-30 09:01:30.785 CDT [15264] HINT:  You will need to rewrite or cast the expression.
+2024-07-30 09:01:30.785 CDT [15264] STATEMENT:  
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		/*when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup) then
+			update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.department, t.schedulegroup = s.schedulegroup*/
+		
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)
+		
+2024-07-30 09:02:57.797 CDT [15264] ERROR:  column "employeeidnumber" is of type integer but expression is of type text at character 969
+2024-07-30 09:02:57.797 CDT [15264] HINT:  You will need to rewrite or cast the expression.
+2024-07-30 09:02:57.797 CDT [15264] STATEMENT:  
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				cast("<NUMBER>" as int) as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		/*when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup) then
+			update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.department, t.schedulegroup = s.schedulegroup*/
+		
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)
+		
+2024-07-30 09:03:36.142 CDT [15264] ERROR:  column "employeeidnumber" is of type integer but expression is of type text at character 969
+2024-07-30 09:03:36.142 CDT [15264] HINT:  You will need to rewrite or cast the expression.
+2024-07-30 09:03:36.142 CDT [15264] STATEMENT:  
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		/*when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup) then
+			update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.department, t.schedulegroup = s.schedulegroup*/
+		
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (cast(s.employeeidnumber as int), s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)
+2024-07-30 09:04:06.630 CDT [15264] ERROR:  column "employeeidnumber" is of type integer but expression is of type text at character 956
+2024-07-30 09:04:06.630 CDT [15264] HINT:  You will need to rewrite or cast the expression.
+2024-07-30 09:04:06.630 CDT [15264] STATEMENT:  
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		/*when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup) then
+			update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.department, t.schedulegroup = s.schedulegroup*/
+		
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)
+		
+2024-07-30 09:10:09.052 CDT [15264] ERROR:  column "t" of relation "employeeinformation" does not exist at character 609
+2024-07-30 09:10:09.052 CDT [15264] STATEMENT:  
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup) then
+			update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.department, t.schedulegroup = s.schedulegroup
+		
+		when not matched then 
+			insert (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)
+		
+2024-07-30 09:10:35.120 CDT [15264] ERROR:  syntax error at or near "update" at character 600
+2024-07-30 09:10:35.120 CDT [15264] STATEMENT:  
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched --and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup) then
+			update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.department, t.schedulegroup = s.schedulegroup
+2024-07-30 09:10:50.460 CDT [15264] ERROR:  column "t" of relation "employeeinformation" does not exist at character 611
+2024-07-30 09:10:50.460 CDT [15264] STATEMENT:  
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched --and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup)
+			then update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.department, t.schedulegroup = s.schedulegroup
+2024-07-30 09:11:51.665 CDT [15264] ERROR:  column "t" of relation "employeeinformation" does not exist at character 611
+2024-07-30 09:11:51.665 CDT [15264] STATEMENT:  
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched --and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup)
+			then update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.location, t.schedulegroup = s.schedulegroup
+2024-07-30 09:14:02.555 CDT [15264] ERROR:  duplicate key value violates unique constraint "employeeinformation_employeeidnumber_key"
+2024-07-30 09:14:02.555 CDT [15264] DETAIL:  Key (employeeidnumber)=(2) already exists.
+2024-07-30 09:14:02.555 CDT [15264] STATEMENT:        INSERT INTO dbo.employeeinformation (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+	        SELECT 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup,
+	            False as terminated
+	        FROM live.employeeinformation s
+2024-07-30 09:15:36.281 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 09:15:38.110 CDT [9200] LOG:  checkpoint complete: wrote 19 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.814 s, sync=0.010 s, total=1.830 s; sync files=16, longest=0.002 s, average=0.001 s; distance=51 kB, estimate=558 kB; lsn=0/183C4C0, redo lsn=0/183C488
+2024-07-30 09:16:14.405 CDT [15264] ERROR:  unexpected end of function definition at end of input at character 3729
+2024-07-30 09:16:14.405 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated boolean default False)
+	language plpgsql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	Ex:
+	call dbo.merge_employeeinformation(False)
+	
+	*/
+	
+	select l.*
+	from live.employeeinformation l
+	left join dbo.employeeinformation d on d.employeeidnumber = l."<NUMBER>"
+	
+	
+	if includes_terminated = False
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup)
+			then update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.location, t.schedulegroup = s.schedulegroup
+		
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)
+		
+		
+		
+	--truncate table live.employeeinformation
+	
+	/*
+	
+	
+	   IF includes_terminated = FALSE THEN
+	        -- Update existing records
+	        UPDATE dbo.employeeinformation t
+	        SET firstname = s.firstname,
+	            lastname = s.lastname,
+	            classshift = s.classshift,
+	            department = s.department,
+	            location = s.location,
+	            schedulegroup = s.schedulegroup
+	        FROM (
+	            SELECT 
+					"<NUMBER>" as employeeidnumber,
+					"<FIRSTNAME>" as firstname,
+					"<LASTNAME>" as lastname,
+					"<CLASS>" as classshift,
+					"<DEPARTMENT>" as department,
+					"<LOCATION>" as location,
+					"<SCHEDULEGROUP>" as schedulegroup
+	            FROM live.employeeinformation
+	        ) AS s
+	        WHERE t.employeeidnumber = s.employeeidnumber
+	          AND (s.firstname <> t.firstname OR
+	               s.lastname <> t.lastname OR
+	               s.classshift <> t.classshift OR
+	               s.department <> t.department OR
+	               s.location <> t.location OR
+	               s.schedulegroup <> t.schedulegroup);
+	
+	        -- Insert new records
+	        INSERT INTO dbo.employeeinformation (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+	        SELECT 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup,
+	            False as terminated
+	        FROM live.employeeinformation s
+	        ON CONFLICT (employeeidnumber) DO NOTHING;
+	    ELSE
+	        -- Additional logic for when includes_terminated is TRUE
+	        -- This part needs to be defined based on your requirements
+	    END IF;
+	*/
+	
+	
+	
+	end
+	$$
+	
+	
+	
+2024-07-30 09:16:31.751 CDT [15264] ERROR:  syntax error at or near "if" at character 830
+2024-07-30 09:16:31.751 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated boolean default False)
+	language plpgsql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	Ex:
+	call dbo.merge_employeeinformation(False)
+	
+	*/
+	
+	select l.*
+	from live.employeeinformation l
+	left join dbo.employeeinformation d on d.employeeidnumber = l."<NUMBER>"
+	
+	
+	if includes_terminated = False
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup)
+			then update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.location, t.schedulegroup = s.schedulegroup
+		
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)
+		
+		end if;
+		
+	--truncate table live.employeeinformation
+	
+	/*
+	
+	
+	   IF includes_terminated = FALSE THEN
+	        -- Update existing records
+	        UPDATE dbo.employeeinformation t
+	        SET firstname = s.firstname,
+	            lastname = s.lastname,
+	            classshift = s.classshift,
+	            department = s.department,
+	            location = s.location,
+	            schedulegroup = s.schedulegroup
+	        FROM (
+	            SELECT 
+					"<NUMBER>" as employeeidnumber,
+					"<FIRSTNAME>" as firstname,
+					"<LASTNAME>" as lastname,
+					"<CLASS>" as classshift,
+					"<DEPARTMENT>" as department,
+					"<LOCATION>" as location,
+					"<SCHEDULEGROUP>" as schedulegroup
+	            FROM live.employeeinformation
+	        ) AS s
+	        WHERE t.employeeidnumber = s.employeeidnumber
+	          AND (s.firstname <> t.firstname OR
+	               s.lastname <> t.lastname OR
+	               s.classshift <> t.classshift OR
+	               s.department <> t.department OR
+	               s.location <> t.location OR
+	               s.schedulegroup <> t.schedulegroup);
+	
+	        -- Insert new records
+	        INSERT INTO dbo.employeeinformation (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+	        SELECT 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup,
+	            False as terminated
+	        FROM live.employeeinformation s
+	        ON CONFLICT (employeeidnumber) DO NOTHING;
+	    ELSE
+	        -- Additional logic for when includes_terminated is TRUE
+	        -- This part needs to be defined based on your requirements
+	    END IF;
+	*/
+	
+	
+	
+	end
+	$$
+	
+	
+	
+2024-07-30 09:16:48.761 CDT [15264] ERROR:  syntax error at or near "end" at character 1927
+2024-07-30 09:16:48.761 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated boolean default False)
+	language plpgsql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	Ex:
+	call dbo.merge_employeeinformation(False)
+	
+	*/
+	
+	--select l.*
+	--from live.employeeinformation l
+	--left join dbo.employeeinformation d on d.employeeidnumber = l."<NUMBER>"
+	
+	
+	if includes_terminated = False
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup)
+			then update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.location, t.schedulegroup = s.schedulegroup
+		
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)
+		
+		end if;
+		
+	--truncate table live.employeeinformation
+	
+	/*
+	
+	
+	   IF includes_terminated = FALSE THEN
+	        -- Update existing records
+	        UPDATE dbo.employeeinformation t
+	        SET firstname = s.firstname,
+	            lastname = s.lastname,
+	            classshift = s.classshift,
+	            department = s.department,
+	            location = s.location,
+	            schedulegroup = s.schedulegroup
+	        FROM (
+	            SELECT 
+					"<NUMBER>" as employeeidnumber,
+					"<FIRSTNAME>" as firstname,
+					"<LASTNAME>" as lastname,
+					"<CLASS>" as classshift,
+					"<DEPARTMENT>" as department,
+					"<LOCATION>" as location,
+					"<SCHEDULEGROUP>" as schedulegroup
+	            FROM live.employeeinformation
+	        ) AS s
+	        WHERE t.employeeidnumber = s.employeeidnumber
+	          AND (s.firstname <> t.firstname OR
+	               s.lastname <> t.lastname OR
+	               s.classshift <> t.classshift OR
+	               s.department <> t.department OR
+	               s.location <> t.location OR
+	               s.schedulegroup <> t.schedulegroup);
+	
+	        -- Insert new records
+	        INSERT INTO dbo.employeeinformation (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+	        SELECT 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup,
+	            False as terminated
+	        FROM live.employeeinformation s
+	        ON CONFLICT (employeeidnumber) DO NOTHING;
+	    ELSE
+	        -- Additional logic for when includes_terminated is TRUE
+	        -- This part needs to be defined based on your requirements
+	    END IF;
+	*/
+	
+	
+	
+	end
+	$$
+	
+	
+	
+2024-07-30 09:17:19.283 CDT [15264] ERROR:  column "t" of relation "employeeinformation" does not exist at character 606
+2024-07-30 09:17:19.283 CDT [15264] QUERY:  merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup)
+			then update set t.firstname = s.firstname, t.lastname = s.lastname, t.classshift = s.classshift, t.department = s.department, t.location = s.location, t.schedulegroup = s.schedulegroup
+		
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)
+2024-07-30 09:17:19.283 CDT [15264] CONTEXT:  PL/pgSQL function dbo.merge_employeeinformation(boolean) line 29 at SQL statement
+2024-07-30 09:17:19.283 CDT [15264] STATEMENT:  call dbo.merge_employeeinformation(False)
+2024-07-30 09:18:24.543 CDT [15264] ERROR:  syntax error at or near "t" at character 1686
+2024-07-30 09:18:24.543 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated boolean default False)
+	language plpgsql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	Ex:
+	call dbo.merge_employeeinformation(False)
+	
+	*/
+	
+	--select l.*
+	--from live.employeeinformation l
+	--left join dbo.employeeinformation d on d.employeeidnumber = l."<NUMBER>"
+	
+	
+	if includes_terminated = False
+	then
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup)
+			then update set 
+				t.firstname = s.firstname, 
+				t.lastname = s.lastname, 
+				t.classshift = s.classshift, 
+				t.department = s.department, 
+				t.location = s.location, 
+				t.schedulegroup = s.schedulegroup
+				t.terminated = False
+		
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)
+		
+		;end if;
+		
+	--truncate table live.employeeinformation
+	
+	/*
+	
+	
+	   IF includes_terminated = FALSE THEN
+	        -- Update existing records
+	        UPDATE dbo.employeeinformation t
+	        SET firstname = s.firstname,
+	            lastname = s.lastname,
+	            classshift = s.classshift,
+	            department = s.department,
+	            location = s.location,
+	            schedulegroup = s.schedulegroup
+	        FROM (
+	            SELECT 
+					"<NUMBER>" as employeeidnumber,
+					"<FIRSTNAME>" as firstname,
+					"<LASTNAME>" as lastname,
+					"<CLASS>" as classshift,
+					"<DEPARTMENT>" as department,
+					"<LOCATION>" as location,
+					"<SCHEDULEGROUP>" as schedulegroup
+	            FROM live.employeeinformation
+	        ) AS s
+	        WHERE t.employeeidnumber = s.employeeidnumber
+	          AND (s.firstname <> t.firstname OR
+	               s.lastname <> t.lastname OR
+	               s.classshift <> t.classshift OR
+	               s.department <> t.department OR
+	               s.location <> t.location OR
+	               s.schedulegroup <> t.schedulegroup);
+	
+	        -- Insert new records
+	        INSERT INTO dbo.employeeinformation (employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+	        SELECT 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup,
+	            False as terminated
+	        FROM live.employeeinformation s
+	        ON CONFLICT (employeeidnumber) DO NOTHING;
+	    ELSE
+	        -- Additional logic for when includes_terminated is TRUE
+	        -- This part needs to be defined based on your requirements
+	    END IF;
+	*/
+	
+	
+	
+	end
+	$$
+	
+	
+	
+2024-07-30 09:18:36.543 CDT [15264] ERROR:  column "t" of relation "employeeinformation" does not exist at character 611
+2024-07-30 09:18:36.543 CDT [15264] QUERY:  merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup)
+			then update set 
+				t.firstname = s.firstname, 
+				t.lastname = s.lastname, 
+				t.classshift = s.classshift, 
+				t.department = s.department, 
+				t.location = s.location, 
+				t.schedulegroup = s.schedulegroup,
+				t.terminated = False
+		
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)
+2024-07-30 09:18:36.543 CDT [15264] CONTEXT:  PL/pgSQL function dbo.merge_employeeinformation(boolean) line 29 at SQL statement
+2024-07-30 09:18:36.543 CDT [15264] STATEMENT:  call dbo.merge_employeeinformation(False)
+2024-07-30 09:18:46.981 CDT [15264] ERROR:  column "t" of relation "employeeinformation" does not exist at character 611
+2024-07-30 09:18:46.981 CDT [15264] QUERY:  merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup)
+			then update set 
+				t.firstname = s.firstname, 
+				t.lastname = s.lastname, 
+				t.classshift = s.classshift, 
+				t.department = s.department, 
+				t.location = s.location, 
+				t.schedulegroup = s.schedulegroup,
+				t.terminated = False
+		
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)
+2024-07-30 09:18:46.981 CDT [15264] CONTEXT:  PL/pgSQL function dbo.merge_employeeinformation(boolean) line 29 at SQL statement
+2024-07-30 09:18:46.981 CDT [15264] STATEMENT:  call dbo.merge_employeeinformation()
+2024-07-30 09:19:53.208 CDT [15264] ERROR:  column "t" of relation "employeeinformation" does not exist at character 614
+2024-07-30 09:19:53.208 CDT [15264] STATEMENT:  
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		when matched and (s.firstname <> t.firstname or s.lastname <> t.firstname or s.classshift <> t.classshift or s.department <> t.department or s.location <> t.location or s.schedulegroup <> t.schedulegroup)
+			then update set 
+				t.firstname = s.firstname, 
+				t.lastname = s.lastname, 
+				t.classshift = s.classshift, 
+				t.department = s.department, 
+				t.location = s.location, 
+				t.schedulegroup = s.schedulegroup,
+				t.terminated = False
+		
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)
+		
+2024-07-30 09:20:36.082 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 09:20:39.511 CDT [9200] LOG:  checkpoint complete: wrote 35 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.418 s, sync=0.005 s, total=3.429 s; sync files=12, longest=0.001 s, average=0.001 s; distance=330 kB, estimate=535 kB; lsn=0/188EF98, redo lsn=0/188EF60
+2024-07-30 09:25:36.511 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 09:25:38.537 CDT [9200] LOG:  checkpoint complete: wrote 21 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.011 s, sync=0.010 s, total=2.026 s; sync files=29, longest=0.002 s, average=0.001 s; distance=2329 kB, estimate=2329 kB; lsn=0/1AD53D8, redo lsn=0/1AD53A0
+2024-07-30 09:26:38.971 CDT [7116] ERROR:  syntax error at or near "and" at character 332
+2024-07-30 09:26:38.971 CDT [7116] STATEMENT:  select l.*
+	from dbo.employeeinformation e 
+	join (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) l
+	and (s.firstname is distinct from t.firstname or 
+				s.lastname is distinct from t.firstname or 
+				s.classshift is distinct from t.classshift or 
+				s.department is distinct from t.department or 
+				s.location is distinct from t.location or 
+				s.schedulegroup is distinct from t.schedulegroup)
+2024-07-30 09:26:49.629 CDT [7116] ERROR:  missing FROM-clause entry for table "s" at character 381
+2024-07-30 09:26:49.629 CDT [7116] STATEMENT:  select l.*
+	from dbo.employeeinformation e 
+	join (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) l on l.employeeidnumber = e.employeeidnumber 
+	and (s.firstname is distinct from t.firstname or 
+				s.lastname is distinct from t.firstname or 
+				s.classshift is distinct from t.classshift or 
+				s.department is distinct from t.department or 
+				s.location is distinct from t.location or 
+				s.schedulegroup is distinct from t.schedulegroup)
+2024-07-30 09:27:02.549 CDT [7116] ERROR:  missing FROM-clause entry for table "t" at character 410
+2024-07-30 09:27:02.549 CDT [7116] STATEMENT:  select s.*
+	from dbo.employeeinformation e 
+	join (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) s on s.employeeidnumber = e.employeeidnumber 
+	and (s.firstname is distinct from t.firstname or 
+				s.lastname is distinct from t.firstname or 
+				s.classshift is distinct from t.classshift or 
+				s.department is distinct from t.department or 
+				s.location is distinct from t.location or 
+				s.schedulegroup is distinct from t.schedulegroup)
+2024-07-30 09:27:07.158 CDT [7116] ERROR:  missing FROM-clause entry for table "e" at character 354
+2024-07-30 09:27:07.158 CDT [7116] STATEMENT:  select s.*
+	from dbo.employeeinformation t
+	join (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) s on s.employeeidnumber = e.employeeidnumber 
+	and (s.firstname is distinct from t.firstname or 
+				s.lastname is distinct from t.firstname or 
+				s.classshift is distinct from t.classshift or 
+				s.department is distinct from t.department or 
+				s.location is distinct from t.location or 
+				s.schedulegroup is distinct from t.schedulegroup)
+2024-07-30 09:30:17.409 CDT [7116] ERROR:  syntax error at or near "distnct" at character 137
+2024-07-30 09:30:17.409 CDT [7116] STATEMENT:  select s.*
+	from live.employeeinformation s
+	join dbo.employeeinformation e on s."<NUMBER>" = e.employeeidnumber 
+	where s.firstname is distnct from e.firstname
+2024-07-30 09:30:22.035 CDT [7116] ERROR:  column s.firstname does not exist at character 122
+2024-07-30 09:30:22.035 CDT [7116] HINT:  Perhaps you meant to reference the column "e.firstname".
+2024-07-30 09:30:22.035 CDT [7116] STATEMENT:  select s.*
+	from live.employeeinformation s
+	join dbo.employeeinformation e on s."<NUMBER>" = e.employeeidnumber 
+	where s.firstname is distinct from e.firstname
+2024-07-30 09:30:36.537 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 09:30:40.375 CDT [9200] LOG:  checkpoint complete: wrote 39 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.825 s, sync=0.008 s, total=3.838 s; sync files=12, longest=0.002 s, average=0.001 s; distance=317 kB, estimate=2127 kB; lsn=0/1B259D8, redo lsn=0/1B24A58
+2024-07-30 09:31:49.671 CDT [7116] ERROR:  syntax error at or near "distnct" at character 200
+2024-07-30 09:31:49.671 CDT [7116] STATEMENT:  select s.*
+	from live.employeeinformation s
+	join dbo.employeeinformation e on s."<NUMBER>" = e.employeeidnumber 
+	where s."<SCHEDULEGROUP>" is distinct from e.schedulegroup 
+		or s."<FIRSTNAME>" is distnct from e.firstname
+2024-07-30 09:48:57.283 CDT [7116] ERROR:  missing FROM-clause entry for table "e" at character 420
+2024-07-30 09:48:57.283 CDT [7116] STATEMENT:  select s.*, t.*
+	from (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) s
+	 join dbo.employeeinformation t on s.employeeidnumber = t.employeeidnumber 
+	where s.schedulegroup is distinct from e.schedulegroup 
+		or s.firstname is distinct from e.firstname 
+		or s.lastname is distinct from e.lastname
+		or s.classshift is distinct from e.classshift 
+		or s.department is distinct from e.department 
+		or s.location is distinct from e.location
+2024-07-30 09:50:36.376 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 09:50:37.493 CDT [9200] LOG:  checkpoint complete: wrote 12 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.107 s, sync=0.005 s, total=1.117 s; sync files=9, longest=0.002 s, average=0.001 s; distance=51 kB, estimate=1920 kB; lsn=0/1B31740, redo lsn=0/1B31708
+2024-07-30 09:51:14.107 CDT [7116] ERROR:  syntax error at or near "table" at character 8
+2024-07-30 09:51:14.107 CDT [7116] STATEMENT:  update table live.employeeinformation 
+	set firstname = 'donkey'
+	where "<NUMBER>" = 2
+2024-07-30 09:51:18.872 CDT [7116] ERROR:  column "firstname" of relation "employeeinformation" does not exist at character 39
+2024-07-30 09:51:18.872 CDT [7116] STATEMENT:  update live.employeeinformation 
+	set firstname = 'donkey'
+	where "<NUMBER>" = 2
+2024-07-30 09:55:36.493 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 09:55:42.652 CDT [9200] LOG:  checkpoint complete: wrote 62 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=6.139 s, sync=0.015 s, total=6.159 s; sync files=34, longest=0.002 s, average=0.001 s; distance=369 kB, estimate=1765 kB; lsn=0/1B8DEA0, redo lsn=0/1B8DE68
+2024-07-30 09:55:58.488 CDT [7116] ERROR:  syntax error at or near "truncate" at character 42
+2024-07-30 09:55:58.488 CDT [7116] STATEMENT:  truncate table dbo.employeeinformation 
+	truncate table live.employeeinformation
+2024-07-30 10:00:36.653 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 10:00:37.471 CDT [9200] LOG:  checkpoint complete: wrote 9 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.806 s, sync=0.006 s, total=0.819 s; sync files=13, longest=0.002 s, average=0.001 s; distance=38 kB, estimate=1592 kB; lsn=0/1B979C0, redo lsn=0/1B97988
+2024-07-30 10:05:36.471 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 10:05:41.622 CDT [9200] LOG:  checkpoint complete: wrote 52 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.131 s, sync=0.014 s, total=5.151 s; sync files=35, longest=0.002 s, average=0.001 s; distance=334 kB, estimate=1466 kB; lsn=0/1BEB528, redo lsn=0/1BEB4F0
+2024-07-30 10:10:36.622 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 10:10:43.003 CDT [9200] LOG:  checkpoint complete: wrote 64 buffers (0.4%); 1 WAL file(s) added, 0 removed, 0 recycled; write=6.339 s, sync=0.013 s, total=6.381 s; sync files=31, longest=0.002 s, average=0.001 s; distance=392 kB, estimate=1359 kB; lsn=0/1C4D830, redo lsn=0/1C4D7F8
+2024-07-30 10:11:25.168 CDT [15264] ERROR:  unexpected end of function definition at end of input at character 2113
+2024-07-30 10:11:25.168 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated boolean default False)
+	language plpgsql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	Ex:
+	call dbo.merge_employeeinformation(False)
+	
+	*/
+	
+	
+	
+	
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		-- if we have the employeeIdNumber in the table, and any value is different
+		when matched 
+			and (s.schedulegroup is distinct from t.schedulegroup 
+				or s.firstname is distinct from t.firstname 
+				or s.lastname is distinct from t.lastname
+				or s.classshift is distinct from t.classshift 
+				or s.department is distinct from t.department 
+				or s.location is distinct from t.location)
+	
+			then update set 
+				firstname = s.firstname, 
+				lastname = s.lastname, 
+				classshift = s.classshift, 
+				department = s.department, 
+				location = s.location, 
+				schedulegroup = s.schedulegroup,
+				terminated = False
+		
+		-- insert values if we do not have them at all in the table
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)
+		
+		
+		truncate table live.employeeinformation
+		
+	end
+	$$
+	
+	
+	
+2024-07-30 10:11:30.548 CDT [15264] ERROR:  syntax error at or near "truncate" at character 2064
+2024-07-30 10:11:30.548 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	(includes_terminated boolean default False)
+	language plpgsql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	Ex:
+	call dbo.merge_employeeinformation(False)
+	
+	*/
+	
+	
+	
+	
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		-- if we have the employeeIdNumber in the table, and any value is different
+		when matched 
+			and (s.schedulegroup is distinct from t.schedulegroup 
+				or s.firstname is distinct from t.firstname 
+				or s.lastname is distinct from t.lastname
+				or s.classshift is distinct from t.classshift 
+				or s.department is distinct from t.department 
+				or s.location is distinct from t.location)
+	
+			then update set 
+				firstname = s.firstname, 
+				lastname = s.lastname, 
+				classshift = s.classshift, 
+				department = s.department, 
+				location = s.location, 
+				schedulegroup = s.schedulegroup,
+				terminated = False
+		
+		-- insert values if we do not have them at all in the table
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)
+		
+		
+		truncate table live.employeeinformation;
+		
+	end
+	$$
+	
+	
+	
+2024-07-30 10:12:03.799 CDT [7116] ERROR:  procedure dbo.merge_employeeinformation() is not unique at character 6
+2024-07-30 10:12:03.799 CDT [7116] HINT:  Could not choose a best candidate procedure. You might need to add explicit type casts.
+2024-07-30 10:12:03.799 CDT [7116] STATEMENT:  call dbo.merge_employeeinformation()
+2024-07-30 10:13:00.984 CDT [15264] ERROR:  syntax error at or near "into" at character 685
+2024-07-30 10:13:00.984 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	()
+	language plpgsql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	Ex:
+	call dbo.merge_employeeinformation(False)
+	
+	*/
+	
+	
+	
+	if 
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		-- if we have the employeeIdNumber in the table, and any value is different
+		when matched 
+			and (s.schedulegroup is distinct from t.schedulegroup 
+				or s.firstname is distinct from t.firstname 
+				or s.lastname is distinct from t.lastname
+				or s.classshift is distinct from t.classshift 
+				or s.department is distinct from t.department 
+				or s.location is distinct from t.location)
+	
+			then update set 
+				firstname = s.firstname, 
+				lastname = s.lastname, 
+				classshift = s.classshift, 
+				department = s.department, 
+				location = s.location, 
+				schedulegroup = s.schedulegroup,
+				terminated = False
+		
+		-- insert values if we do not have them at all in the table
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False);
+		
+		
+		truncate table live.employeeinformation;
+		
+	end
+	$$
+	
+	
+	
+2024-07-30 10:13:07.729 CDT [15264] ERROR:  syntax error at or near "into" at character 685
+2024-07-30 10:13:07.729 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	()
+	language plpgsql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	Ex:
+	call dbo.merge_employeeinformation(False)
+	
+	*/
+	
+	
+	
+	if 
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		-- if we have the employeeIdNumber in the table, and any value is different
+		when matched 
+			and (s.schedulegroup is distinct from t.schedulegroup 
+				or s.firstname is distinct from t.firstname 
+				or s.lastname is distinct from t.lastname
+				or s.classshift is distinct from t.classshift 
+				or s.department is distinct from t.department 
+				or s.location is distinct from t.location)
+	
+			then update set 
+				firstname = s.firstname, 
+				lastname = s.lastname, 
+				classshift = s.classshift, 
+				department = s.department, 
+				location = s.location, 
+				schedulegroup = s.schedulegroup,
+				terminated = False
+		
+		-- insert values if we do not have them at all in the table
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False);
+		
+		
+		truncate table live.employeeinformation;
+		
+	end
+	$$
+	
+	
+	
+2024-07-30 10:13:19.742 CDT [15264] ERROR:  syntax error at or near "language" at character 62
+2024-07-30 10:13:19.742 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	
+	language plpgsql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	Ex:
+	call dbo.merge_employeeinformation(False)
+	
+	*/
+	
+	
+	
+	if 
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		-- if we have the employeeIdNumber in the table, and any value is different
+		when matched 
+			and (s.schedulegroup is distinct from t.schedulegroup 
+				or s.firstname is distinct from t.firstname 
+				or s.lastname is distinct from t.lastname
+				or s.classshift is distinct from t.classshift 
+				or s.department is distinct from t.department 
+				or s.location is distinct from t.location)
+	
+			then update set 
+				firstname = s.firstname, 
+				lastname = s.lastname, 
+				classshift = s.classshift, 
+				department = s.department, 
+				location = s.location, 
+				schedulegroup = s.schedulegroup,
+				terminated = False
+		
+		-- insert values if we do not have them at all in the table
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False);
+		
+		
+		truncate table live.employeeinformation;
+		
+	end
+	$$
+	
+	
+	
+2024-07-30 10:13:24.011 CDT [15264] ERROR:  syntax error at or near "into" at character 685
+2024-07-30 10:13:24.011 CDT [15264] STATEMENT:  create or replace procedure dbo.merge_employeeinformation
+	()
+	language plpgsql
+	as $$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	Ex:
+	call dbo.merge_employeeinformation(False)
+	
+	*/
+	
+	
+	
+	if 
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		-- if we have the employeeIdNumber in the table, and any value is different
+		when matched 
+			and (s.schedulegroup is distinct from t.schedulegroup 
+				or s.firstname is distinct from t.firstname 
+				or s.lastname is distinct from t.lastname
+				or s.classshift is distinct from t.classshift 
+				or s.department is distinct from t.department 
+				or s.location is distinct from t.location)
+	
+			then update set 
+				firstname = s.firstname, 
+				lastname = s.lastname, 
+				classshift = s.classshift, 
+				department = s.department, 
+				location = s.location, 
+				schedulegroup = s.schedulegroup,
+				terminated = False
+		
+		-- insert values if we do not have them at all in the table
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False);
+		
+		
+		truncate table live.employeeinformation;
+		
+	end
+	$$
+	
+	
+	
+2024-07-30 10:13:41.593 CDT [7116] ERROR:  syntax error at end of input at character 35
+2024-07-30 10:13:41.593 CDT [7116] STATEMENT:  call dbo.merge_employeeinformation
+2024-07-30 10:13:46.566 CDT [7116] ERROR:  procedure dbo.merge_employeeinformation() is not unique at character 6
+2024-07-30 10:13:46.566 CDT [7116] HINT:  Could not choose a best candidate procedure. You might need to add explicit type casts.
+2024-07-30 10:13:46.566 CDT [7116] STATEMENT:  call dbo.merge_employeeinformation()
+2024-07-30 10:13:55.339 CDT [7116] ERROR:  procedure dbo.merge_employeeinformation() is not unique at character 6
+2024-07-30 10:13:55.339 CDT [7116] HINT:  Could not choose a best candidate procedure. You might need to add explicit type casts.
+2024-07-30 10:13:55.339 CDT [7116] STATEMENT:  call dbo.merge_employeeinformation()
+2024-07-30 10:14:01.839 CDT [7116] ERROR:  procedure dbo.merge_employeeinformation() is not unique at character 6
+2024-07-30 10:14:01.839 CDT [7116] HINT:  Could not choose a best candidate procedure. You might need to add explicit type casts.
+2024-07-30 10:14:01.839 CDT [7116] STATEMENT:  call dbo.merge_employeeinformation()
+2024-07-30 10:15:36.003 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 10:15:45.182 CDT [9200] LOG:  checkpoint complete: wrote 92 buffers (0.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=9.156 s, sync=0.016 s, total=9.179 s; sync files=44, longest=0.002 s, average=0.001 s; distance=726 kB, estimate=1296 kB; lsn=0/1D03080, redo lsn=0/1D03048
+2024-07-30 10:21:38.292 CDT [19504] ERROR:  permission denied for schema dbo at character 6
+2024-07-30 10:21:38.292 CDT [19504] STATEMENT:  call dbo.merge_employeeinformation()
+2024-07-30 10:21:53.787 CDT [19504] ERROR:  permission denied for table employeeinformation
+2024-07-30 10:21:53.787 CDT [19504] CONTEXT:  SQL statement "merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		-- if we have the employeeIdNumber in the table, and any value is different
+		when matched 
+			and (s.schedulegroup is distinct from t.schedulegroup 
+				or s.firstname is distinct from t.firstname 
+				or s.lastname is distinct from t.lastname
+				or s.classshift is distinct from t.classshift 
+				or s.department is distinct from t.department 
+				or s.location is distinct from t.location)
+	
+			then update set 
+				firstname = s.firstname, 
+				lastname = s.lastname, 
+				classshift = s.classshift, 
+				department = s.department, 
+				location = s.location, 
+				schedulegroup = s.schedulegroup,
+				terminated = False
+		
+		-- insert values if we do not have them at all in the table
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)"
+	PL/pgSQL function dbo.merge_employeeinformation() line 25 at SQL statement
+2024-07-30 10:21:53.787 CDT [19504] STATEMENT:  call dbo.merge_employeeinformation()
+2024-07-30 10:21:58.109 CDT [8472] ERROR:  permission denied for table employeeinformation
+2024-07-30 10:21:58.109 CDT [8472] CONTEXT:  SQL statement "merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		-- if we have the employeeIdNumber in the table, and any value is different
+		when matched 
+			and (s.schedulegroup is distinct from t.schedulegroup 
+				or s.firstname is distinct from t.firstname 
+				or s.lastname is distinct from t.lastname
+				or s.classshift is distinct from t.classshift 
+				or s.department is distinct from t.department 
+				or s.location is distinct from t.location)
+	
+			then update set 
+				firstname = s.firstname, 
+				lastname = s.lastname, 
+				classshift = s.classshift, 
+				department = s.department, 
+				location = s.location, 
+				schedulegroup = s.schedulegroup,
+				terminated = False
+		
+		-- insert values if we do not have them at all in the table
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)"
+	PL/pgSQL function dbo.merge_employeeinformation() line 25 at SQL statement
+2024-07-30 10:21:58.109 CDT [8472] STATEMENT:  call dbo.merge_employeeinformation()
+2024-07-30 10:22:47.653 CDT [14252] ERROR:  permission denied for table employeeinformation
+2024-07-30 10:22:47.653 CDT [14252] CONTEXT:  SQL statement "merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		-- if we have the employeeIdNumber in the table, and any value is different
+		when matched 
+			and (s.schedulegroup is distinct from t.schedulegroup 
+				or s.firstname is distinct from t.firstname 
+				or s.lastname is distinct from t.lastname
+				or s.classshift is distinct from t.classshift 
+				or s.department is distinct from t.department 
+				or s.location is distinct from t.location)
+	
+			then update set 
+				firstname = s.firstname, 
+				lastname = s.lastname, 
+				classshift = s.classshift, 
+				department = s.department, 
+				location = s.location, 
+				schedulegroup = s.schedulegroup,
+				terminated = False
+		
+		-- insert values if we do not have them at all in the table
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)"
+	PL/pgSQL function dbo.merge_employeeinformation() line 25 at SQL statement
+2024-07-30 10:22:47.653 CDT [14252] STATEMENT:  call dbo.merge_employeeinformation()
+2024-07-30 10:23:08.912 CDT [19508] ERROR:  permission denied for table employeeinformation
+2024-07-30 10:23:08.912 CDT [19508] CONTEXT:  SQL statement "merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		-- if we have the employeeIdNumber in the table, and any value is different
+		when matched 
+			and (s.schedulegroup is distinct from t.schedulegroup 
+				or s.firstname is distinct from t.firstname 
+				or s.lastname is distinct from t.lastname
+				or s.classshift is distinct from t.classshift 
+				or s.department is distinct from t.department 
+				or s.location is distinct from t.location)
+	
+			then update set 
+				firstname = s.firstname, 
+				lastname = s.lastname, 
+				classshift = s.classshift, 
+				department = s.department, 
+				location = s.location, 
+				schedulegroup = s.schedulegroup,
+				terminated = False
+		
+		-- insert values if we do not have them at all in the table
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)"
+	PL/pgSQL function dbo.merge_employeeinformation() line 25 at SQL statement
+2024-07-30 10:23:08.912 CDT [19508] STATEMENT:  call dbo.merge_employeeinformation()
+2024-07-30 10:25:10.366 CDT [17876] ERROR:  permission denied for table employeeinformation
+2024-07-30 10:25:10.366 CDT [17876] CONTEXT:  SQL statement "merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				"<FIRSTNAME>" as firstname,
+				"<LASTNAME>" as lastname,
+				"<CLASS>" as classshift,
+				"<DEPARTMENT>" as department,
+				"<LOCATION>" as location,
+				"<SCHEDULEGROUP>" as schedulegroup
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		-- if we have the employeeIdNumber in the table, and any value is different
+		when matched 
+			and (s.schedulegroup is distinct from t.schedulegroup 
+				or s.firstname is distinct from t.firstname 
+				or s.lastname is distinct from t.lastname
+				or s.classshift is distinct from t.classshift 
+				or s.department is distinct from t.department 
+				or s.location is distinct from t.location)
+	
+			then update set 
+				firstname = s.firstname, 
+				lastname = s.lastname, 
+				classshift = s.classshift, 
+				department = s.department, 
+				location = s.location, 
+				schedulegroup = s.schedulegroup,
+				terminated = False
+		
+		-- insert values if we do not have them at all in the table
+		when not matched then 
+			insert --(employeeidnumber, firstname, lastname, classshift, department, location, schedulegroup, terminated)
+			values (default, s.employeeidnumber, s.firstname, s.lastname, s.classshift, s.department, s.location, s.schedulegroup, False)"
+	PL/pgSQL function dbo.merge_employeeinformation() line 25 at SQL statement
+2024-07-30 10:25:10.366 CDT [17876] STATEMENT:  call dbo.merge_employeeinformation()
+2024-07-30 10:25:36.221 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 10:25:42.080 CDT [9200] LOG:  checkpoint complete: wrote 59 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.835 s, sync=0.017 s, total=5.859 s; sync files=45, longest=0.002 s, average=0.001 s; distance=519 kB, estimate=1218 kB; lsn=0/1D84E48, redo lsn=0/1D84E10
+2024-07-30 10:26:55.598 CDT [7116] ERROR:  syntax error at or near "to" at character 25
+2024-07-30 10:26:55.598 CDT [7116] STATEMENT:  grant all on all tables to python
+2024-07-30 10:30:36.080 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 10:30:38.106 CDT [9200] LOG:  checkpoint complete: wrote 21 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.011 s, sync=0.009 s, total=2.026 s; sync files=21, longest=0.002 s, average=0.001 s; distance=615 kB, estimate=1158 kB; lsn=0/1E1EC68, redo lsn=0/1E1EC30
+2024-07-30 10:35:36.105 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 10:35:38.235 CDT [9200] LOG:  checkpoint complete: wrote 22 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.114 s, sync=0.008 s, total=2.130 s; sync files=17, longest=0.002 s, average=0.001 s; distance=623 kB, estimate=1104 kB; lsn=0/1EBAA48, redo lsn=0/1EBAA10
+2024-07-30 10:40:36.235 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 10:40:40.678 CDT [9200] LOG:  checkpoint complete: wrote 45 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.424 s, sync=0.012 s, total=4.443 s; sync files=18, longest=0.002 s, average=0.001 s; distance=352 kB, estimate=1029 kB; lsn=0/1F12BD0, redo lsn=0/1F12B98
+2024-07-30 10:45:36.678 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 10:45:36.790 CDT [9200] LOG:  checkpoint complete: wrote 1 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.101 s, sync=0.002 s, total=0.112 s; sync files=1, longest=0.002 s, average=0.002 s; distance=7 kB, estimate=927 kB; lsn=0/1F14940, redo lsn=0/1F14908
+2024-07-30 10:50:36.790 CDT [9200] LOG:  checkpoint starting: time
+2024-07-30 10:50:43.857 CDT [9200] LOG:  checkpoint complete: wrote 71 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=7.044 s, sync=0.016 s, total=7.067 s; sync files=44, longest=0.002 s, average=0.001 s; distance=635 kB, estimate=898 kB; lsn=0/1FB3718, redo lsn=0/1FB36E0

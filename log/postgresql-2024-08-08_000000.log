@@ -1,0 +1,100 @@
+2024-08-08 03:01:18.329 CDT [8740] LOG:  checkpoint starting: time
+2024-08-08 03:01:21.694 CDT [8740] LOG:  checkpoint complete: wrote 32 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.344 s, sync=0.014 s, total=3.366 s; sync files=30, longest=0.002 s, average=0.001 s; distance=305 kB, estimate=529 kB; lsn=0/255ABF8, redo lsn=0/255ABC0
+2024-08-08 09:26:18.893 CDT [8740] LOG:  checkpoint starting: time
+2024-08-08 09:26:25.271 CDT [8740] LOG:  checkpoint complete: wrote 64 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=6.344 s, sync=0.021 s, total=6.379 s; sync files=57, longest=0.002 s, average=0.001 s; distance=1048 kB, estimate=1048 kB; lsn=0/2660C48, redo lsn=0/2660C10
+2024-08-08 09:31:18.273 CDT [8740] LOG:  checkpoint starting: time
+2024-08-08 09:31:22.828 CDT [8740] LOG:  checkpoint complete: wrote 46 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.532 s, sync=0.017 s, total=4.555 s; sync files=33, longest=0.002 s, average=0.001 s; distance=268 kB, estimate=970 kB; lsn=0/26A3FA8, redo lsn=0/26A3F70
+2024-08-08 09:35:42.079 CDT [44076] ERROR:  syntax error at or near "truncate" at character 1232
+2024-08-08 09:35:42.079 CDT [44076] STATEMENT:  -- DROP PROCEDURE dbo.update_employeeinformation_isterminated();
+	
+	CREATE OR REPLACE PROCEDURE dbo.update_employeeinformation_isterminated()
+	 LANGUAGE plpgsql
+	AS $procedure$
+	begin 
+	/*
+	
+	select * from live.employeeinformation
+	
+	select * from dbo.employeeinformation
+	
+	This will merge the employee information from live schema to dbo schema
+	It will change the headers to match the dbo schema
+	It can be run with includes_terminated bit
+		This must be determiend in python, when downloading from TimeClock!!!!!
+		when @includes_terminated = 0, we will just update / insert new records
+		when @includes_terminated = 1, we will do a join to check to see if the terminated field needs changed
+	
+	Ex:
+	call dbo.update_employeeinformation_isterminated()
+	
+	*/
+	
+		
+		merge into dbo.employeeinformation as t
+		using (
+			select 
+				"<NUMBER>" as employeeidnumber,
+				TRUE as terminated -- we don't care about any of the other information besides this 
+			from live.employeeinformation ) as s
+		on t.employeeidnumber = s.employeeidnumber
+		
+		-- if we have the employeeIdNumber in the table, and any value is different
+		when matched 
+			and s.terminated <> t.terminated
+	
+			then update set
+				terminated = s.terminated
+		
+		
+		truncate table live.employeeinformation;
+	
+		insert into dbo.employeeinformation_log (insertedat)
+		values (now());
+		
+	end
+	$procedure$
+	
+	
+2024-08-08 09:36:18.829 CDT [8740] LOG:  checkpoint starting: time
+2024-08-08 09:36:27.414 CDT [8740] LOG:  checkpoint complete: wrote 86 buffers (0.5%); 0 WAL file(s) added, 0 removed, 0 recycled; write=8.568 s, sync=0.010 s, total=8.586 s; sync files=18, longest=0.002 s, average=0.001 s; distance=1510 kB, estimate=1510 kB; lsn=0/281DA38, redo lsn=0/281DA00
+2024-08-08 09:38:05.817 CDT [36364] ERROR:  syntax error at or near "grant" at character 40
+2024-08-08 09:38:05.817 CDT [36364] STATEMENT:  
+	grant all on schema dbo to python
+	
+	grant all on all tables in schema dbo to python
+	
+	grant all privileges on database postgres to python
+	
+2024-08-08 09:41:18.415 CDT [8740] LOG:  checkpoint starting: time
+2024-08-08 09:41:19.939 CDT [8740] LOG:  checkpoint complete: wrote 16 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.511 s, sync=0.008 s, total=1.525 s; sync files=16, longest=0.002 s, average=0.001 s; distance=65 kB, estimate=1366 kB; lsn=0/282DEE0, redo lsn=0/282DEA8
+2024-08-08 09:46:18.940 CDT [8740] LOG:  checkpoint starting: time
+2024-08-08 09:46:19.858 CDT [8740] LOG:  checkpoint complete: wrote 10 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.906 s, sync=0.006 s, total=0.918 s; sync files=10, longest=0.002 s, average=0.001 s; distance=53 kB, estimate=1234 kB; lsn=0/283B438, redo lsn=0/283B400
+2024-08-08 09:51:18.858 CDT [8740] LOG:  checkpoint starting: time
+2024-08-08 09:51:28.741 CDT [8740] LOG:  checkpoint complete: wrote 99 buffers (0.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=9.853 s, sync=0.022 s, total=9.883 s; sync files=49, longest=0.004 s, average=0.001 s; distance=977 kB, estimate=1209 kB; lsn=0/292FA58, redo lsn=0/292FA20
+2024-08-08 09:55:51.328 CDT [59788] ERROR:  unterminated quoted string at or near "'merge_employeeinformation" at character 75
+2024-08-08 09:55:51.328 CDT [59788] STATEMENT:  select max(insertedat) from dbo.employeeinformation_log where description='merge_employeeinformation
+2024-08-08 15:21:18.807 CDT [8740] LOG:  checkpoint starting: time
+2024-08-08 15:21:22.451 CDT [8740] LOG:  checkpoint complete: wrote 37 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.621 s, sync=0.017 s, total=3.645 s; sync files=32, longest=0.002 s, average=0.001 s; distance=153 kB, estimate=1103 kB; lsn=0/2956090, redo lsn=0/2956058
+2024-08-08 15:26:18.452 CDT [8740] LOG:  checkpoint starting: time
+2024-08-08 15:26:22.300 CDT [8740] LOG:  checkpoint complete: wrote 39 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.827 s, sync=0.014 s, total=3.848 s; sync files=30, longest=0.002 s, average=0.001 s; distance=217 kB, estimate=1014 kB; lsn=0/298C728, redo lsn=0/298C6F0
+2024-08-08 15:31:18.301 CDT [8740] LOG:  checkpoint starting: time
+2024-08-08 15:31:20.931 CDT [8740] LOG:  checkpoint complete: wrote 27 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.616 s, sync=0.009 s, total=2.630 s; sync files=17, longest=0.002 s, average=0.001 s; distance=102 kB, estimate=923 kB; lsn=0/29A62E8, redo lsn=0/29A62B0
+2024-08-08 15:34:26.714 CDT [44076] ERROR:  unexpected end of function definition at end of input at character 128
+2024-08-08 15:34:26.714 CDT [44076] STATEMENT:  CREATE OR REPLACE PROCEDURE live.mergeclocktimes_fromstaging()
+	 LANGUAGE plpgsql
+	AS $procedure$
+	begin 
+	
+	select 5
+		
+	end
+	$procedure$
+	
+	
+2024-08-08 15:36:18.932 CDT [8740] LOG:  checkpoint starting: time
+2024-08-08 15:36:22.272 CDT [8740] LOG:  checkpoint complete: wrote 34 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.320 s, sync=0.013 s, total=3.340 s; sync files=28, longest=0.001 s, average=0.001 s; distance=174 kB, estimate=848 kB; lsn=0/29D1D78, redo lsn=0/29D1D40
+2024-08-08 15:43:42.893 CDT [36364] ERROR:  relation "clocktimes_remediation" already exists
+2024-08-08 15:43:42.893 CDT [36364] STATEMENT:  -- gonna use this one as the dump table when remediating old data!
+	create table live.clocktimes_remediation (name varchar(255) not null, jobcode varchar(255), costcode varchar(255), hours decimal(5,2), timein timestamp not null, timeout timestamp null, isclockedin bool, insertedat timestamp)
+2024-08-08 15:46:18.275 CDT [8740] LOG:  checkpoint starting: time
+2024-08-08 15:46:21.911 CDT [8740] LOG:  checkpoint complete: wrote 37 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.619 s, sync=0.012 s, total=3.637 s; sync files=27, longest=0.002 s, average=0.001 s; distance=144 kB, estimate=778 kB; lsn=0/29F5EB8, redo lsn=0/29F5E80

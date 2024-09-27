@@ -1,0 +1,26 @@
+2024-08-14 08:21:53.021 CDT [37540] ERROR:  syntax error at or near "order" at character 72
+2024-08-14 08:21:53.021 CDT [37540] STATEMENT:  select count(*), insertedat from dbo.clocktimes c group by inserted at order by insertead desc
+2024-08-14 08:21:57.473 CDT [37540] ERROR:  column "insertead" does not exist at character 80
+2024-08-14 08:21:57.473 CDT [37540] HINT:  Perhaps you meant to reference the column "c.insertedat".
+2024-08-14 08:21:57.473 CDT [37540] STATEMENT:  select count(*), insertedat from dbo.clocktimes c group by insertedat order by insertead desc
+2024-08-14 15:17:38.429 CDT [21652] ERROR:  column "timin" does not exist at character 138
+2024-08-14 15:17:38.429 CDT [21652] HINT:  Perhaps you meant to reference the column "clocktimes.timein".
+2024-08-14 15:17:38.429 CDT [21652] STATEMENT:  select timein::timestamp::date, remediationtype, count(*) from dbo.clocktimes group by timein::timestamp::date, remediationtype order by timin::timestamp::date
+2024-08-14 15:44:26.144 CDT [21652] ERROR:  column reference "timein" is ambiguous at character 371
+2024-08-14 15:44:26.144 CDT [21652] STATEMENT:  select * from dbo.clocktimes c 
+	left join (select name, jobcode, costcode, timein, timeout, isclockedin, max(remediationtype) as bestrecord from dbo.clocktimes group by name, jobcode, costcode, timein, timeout, isclockedin) c1 on c1.name = c.name and c1.jobcode = c.jobcode and c1.timein = c.timein and c1.timeout = c.timeout and c.remediationtype  = bestrecord
+	where timein::timestamp::date = '2024-08-13'
+	
+2024-08-14 15:51:26.579 CDT [8740] LOG:  checkpoint starting: time
+2024-08-14 15:51:28.615 CDT [8740] LOG:  checkpoint complete: wrote 21 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.014 s, sync=0.011 s, total=2.036 s; sync files=27, longest=0.002 s, average=0.001 s; distance=164 kB, estimate=261 kB; lsn=0/3FBC5D8, redo lsn=0/3FBC5A0
+2024-08-14 16:51:34.272 CDT [8908] WARNING:  autovacuum worker took too long to start; canceled
+2024-08-14 16:52:34.368 CDT [8908] WARNING:  autovacuum worker took too long to start; canceled
+2024-08-14 16:53:23.431 CDT [31976] WARNING:  autovacuum worker started without a worker entry
+2024-08-14 16:56:30.993 CDT [57880] WARNING:  autovacuum worker started without a worker entry
+2024-08-14 16:57:34.469 CDT [8908] WARNING:  autovacuum worker took too long to start; canceled
+2024-08-14 17:00:34.668 CDT [8908] WARNING:  autovacuum worker took too long to start; canceled
+2024-08-14 17:02:34.668 CDT [8908] WARNING:  autovacuum worker took too long to start; canceled
+2024-08-14 17:02:42.680 CDT [35400] WARNING:  autovacuum worker started without a worker entry
+2024-08-14 17:04:34.768 CDT [8908] WARNING:  autovacuum worker took too long to start; canceled
+2024-08-14 17:04:47.922 CDT [25400] WARNING:  autovacuum worker started without a worker entry
+2024-08-14 17:04:48.003 CDT [59224] WARNING:  autovacuum worker started without a worker entry

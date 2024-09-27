@@ -1,0 +1,12 @@
+2024-08-02 06:55:30.797 CDT [9084] LOG:  database system was interrupted; last known up at 2024-08-02 03:02:26 CDT
+2024-08-02 06:55:31.112 CDT [9084] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-08-02 06:55:31.120 CDT [9084] LOG:  redo starts at 0/22AC768
+2024-08-02 06:55:31.120 CDT [9084] LOG:  invalid record length at 0/22AC850: expected at least 24, got 0
+2024-08-02 06:55:31.120 CDT [9084] LOG:  redo done at 0/22AC818 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2024-08-02 06:55:31.128 CDT [9016] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-08-02 06:55:31.154 CDT [9016] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.005 s, total=0.031 s; sync files=2, longest=0.003 s, average=0.003 s; distance=0 kB, estimate=0 kB; lsn=0/22AC850, redo lsn=0/22AC850
+2024-08-02 08:15:20.105 CDT [9468] ERROR:  canceling statement due to user request
+2024-08-02 08:15:20.105 CDT [9460] ERROR:  canceling statement due to user request
+2024-08-02 08:15:20.109 CDT [9016] LOG:  shutting down
+2024-08-02 08:15:20.113 CDT [9016] LOG:  checkpoint starting: shutdown immediate
+2024-08-02 08:15:20.127 CDT [9016] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.018 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/22AC900, redo lsn=0/22AC900

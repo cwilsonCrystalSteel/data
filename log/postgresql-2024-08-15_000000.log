@@ -1,0 +1,18 @@
+2024-08-15 03:02:18.279 CDT [8740] LOG:  checkpoint starting: time
+2024-08-15 03:02:22.676 CDT [8740] LOG:  checkpoint complete: wrote 44 buffers (0.3%); 0 WAL file(s) added, 0 removed, 1 recycled; write=4.361 s, sync=0.021 s, total=4.397 s; sync files=56, longest=0.002 s, average=0.001 s; distance=551 kB, estimate=551 kB; lsn=0/40462F8, redo lsn=0/40462C0
+2024-08-15 03:07:18.678 CDT [8740] LOG:  checkpoint starting: time
+2024-08-15 03:07:19.392 CDT [8740] LOG:  checkpoint complete: wrote 7 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.706 s, sync=0.003 s, total=0.715 s; sync files=3, longest=0.002 s, average=0.001 s; distance=10 kB, estimate=497 kB; lsn=0/4048D08, redo lsn=0/4048CD0
+2024-08-15 05:07:18.422 CDT [8740] LOG:  checkpoint starting: time
+2024-08-15 05:07:20.886 CDT [8740] LOG:  checkpoint complete: wrote 25 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.446 s, sync=0.010 s, total=2.465 s; sync files=26, longest=0.001 s, average=0.001 s; distance=349 kB, estimate=482 kB; lsn=0/40A0288, redo lsn=0/40A0250
+2024-08-15 15:03:58.734 CDT [60076] ERROR:  syntax error at or near "from" at character 36
+2024-08-15 15:03:58.734 CDT [60076] STATEMENT:  select timein - INTERVAL'4 hours'* from dbo.clocktimes c 
+	--left join (select name, jobcode, costcode, timein, timeout, isclockedin, max(remediationtype) as bestrecord from dbo.clocktimes group by name, jobcode, costcode, timein, timeout, isclockedin) c1 on c1.name = c.name and c1.jobcode = c.jobcode and c1.timein = c.timein and c.remediationtype  = bestrecord
+	where c.timein::timestamp::date = '2024-08-13'
+2024-08-15 15:20:46.242 CDT [60076] ERROR:  column "clocktimes.remediationtype" must appear in the GROUP BY clause or be used in an aggregate function at character 159
+2024-08-15 15:20:46.242 CDT [60076] STATEMENT:  select name, jobcode, costcode, hours
+	from dbo.clocktimes 
+	where timein::timestamp::date = '2024-08-13' 
+	group by name, jobcode, costcode, hours
+	order by remediationtype
+2024-08-15 15:30:40.566 CDT [60076] ERROR:  syntax error at or near "10" at character 12
+2024-08-15 15:30:40.566 CDT [60076] STATEMENT:  select top 10 * from dbo.clocktimes order by insertedat  desc
